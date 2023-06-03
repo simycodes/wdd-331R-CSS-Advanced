@@ -1,0 +1,10 @@
+Font used
+https://fonts.google.com/specimen/Roboto+Condensed
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+</style>
+
+
+colors
+https://coolors.co/2b2d42-8d99ae-edf2f4-ef233c-d90429

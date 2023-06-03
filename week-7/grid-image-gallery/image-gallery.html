@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>CSS Grid Image Gallery</title>
+</head>
+
+<body>
+
+  <!-- THIS IS THE IMAGE THAT POPS UP WHEN ANY IMAGE IS CLICKED IN THE GALLERY -->
+  <div class="overlay">
+    <div class="overlay-inner">
+      <button class="close">× Close</button>
+      <img>
+    </div>
+  </div>
+
+  <!-- THIS IS THE GRID CONTAINER THAT HOLDS THE IMAGES FOR THE GALLERY -->
+  <section class="gallery">
+  </section>
+
+  <script>
+    // SELECT THE GALLERY GRID, OVERLAY, OVERLAY-IMAGE AND CLOSE IMAGE BUTTON
+    const gallery = document.querySelector('.gallery');
+    const overlay = document.querySelector('.overlay');
+    const overlayImage = overlay.querySelector('img');
+    const overlayClose = overlay.querySelector('.close');
+
+    // FUNCTION TO CREATE ELEMENT TO HOLD EACH IMAGE GALLERY AND VIEW IMAGE BTN
+    // h IS USED TO SPAN COLUMNS(grid-column:) AND v IS USED TO SPAN ROWS(grid-row)
+    // h${h} v${v} ARE CLASSES THAT ARE ALREADY STYLED BUT DYNAMICALLY CREATED
+    function generateHTML([h, v]) {
+      return `
+        <div class="item h${h} v${v}">
+          <img src="images/${randomNumber(12)}.jpg">
+          <div class="item__overlay">
+            <button>View →</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // FUNCTION TO GENERATE A RANDOM NUMBER - USED TO SELECT RANDOM IMAGES
+    function randomNumber(limit) {
+      return Math.floor(Math.random() * limit) + 1;
+    }
+
+    // MAKE THE overlayImage EQUAL TO THE CLICKED ON IMAGE AND OPEN THE OVERLAY
+    function handleClick(e) {
+      const src = e.currentTarget.querySelector('img').src;
+      overlayImage.src = src;
+      overlay.classList.add('open');
+    }
+
+    // CLOSE THE OVERLAY
+    function close() {
+      overlay.classList.remove('open');
+    }
+
+    // CREATE 50 ARRAYS HAVING A PAIR OF RANDOM DIGITS BETWEEN 1 AND 4
+    const digits = Array.from({ length: 50 }, () => [randomNumber(4), randomNumber(4)]).concat([[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]])
+    // CREATE ELEMENTS TO HOLD EACH IMAGE GALLERY USING THE GENERATED DIGITS
+    const html = digits.map(generateHTML).join('');
+    // console.log(html);
+    gallery.innerHTML = html;
+
+    // SELECT ALL IMAGES AND ADD A CLICK EVENT TO THEM
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => item.addEventListener('click', handleClick));
+    overlayClose.addEventListener('click', close);
+
+  </script>
+</body>
+
+</html>

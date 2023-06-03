@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 2 Notes: Atomic Design</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank">Atomic Design In Detail</a></li>
+                    <li>
+                      You can create good experiences without knowing the content. 
+                      What you can’t do is create good experiences without knowing your content 
+                      structure. What is your content made from, not what your content is. 
+                      - Mark Boulton
+                    </li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>Atomic Design Approach To Web Development</h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>Atomic Design</em></h3>
+                      <p>
+                        Atomic design” as a buzzword encapsulates the concepts of modular design and development that assists to produce effective user interface design systems.
+                      </p>
+                    </article>
+
+                    <h4>Atomic Design Process</h4>
+                    <div class="notes-image">
+                        <img src="../images/atomic-design-process.png" width="600" height="300" alt="">
+                    </div>
+
+                    <article>
+                      <h4>Atoms</h4>
+                      <p>
+                        The atoms of our interfaces serve as the foundational building blocks that comprise all our user interfaces. These atoms include basic HTML elements like form labels, inputs, buttons, and others that can’t be broken down any further without ceasing to be functional.
+                        - Each interface atom has its own unique properties, such as the dimensions of a hero image, or the font size of a primary heading.
+                        - Atoms are UI elements that can’t be broken down any further and serve as the elemental building blocks of an interface.
+                      </p>
+
+                      <h4>Molecules</h4>
+                      <p>
+                        - Molecules are groups of two or more atoms held together by chemical bonds. Molecules are groups of atoms bonded together that take on distinct new properties.
+                        - more tangible and operational than atoms.
+                        - Molecules are collections of atoms that form relatively simple UI components.
+
+                        - In interfaces, molecules are relatively simple groups of UI elements functioning together as a unit.
+                        For example, a form label, search input, and button can join together to create a search form molecule.
+                        When combined, these abstract atoms suddenly have purpose. <br>
+                        - 2 or more element selectors can form a molecule, or class that can styles several elements forms a molecule.
+                        - Components with several elements (atoms) are good examples of molecules. <br>
+                        HTML & CSS Examples include: a form label, search input, and button can join together to create a search form molecule.
+                      </p>
+
+                      <h4>Organisms</h4>
+                      <p>
+                        - Organisms are assemblies of molecules functioning together as a unit.
+                        - Organisms are relatively complex UI components composed of groups of molecules and/or atoms and/or other organisms. These organisms form distinct sections of an interface.
+                        - Organisms are relatively complex components that form discrete sections of an interface.
+                        - A search form can often be found in the header of many web experiences, so let’s put that search form molecule into the context of a header organism.
+                        - The header organism can be composed of a search form molecule, logo atom, and primary navigation molecule.
+                        - Organisms can consist of similar or different molecule types. A header organism might consist of dissimilar elements such as a logo image, primary navigation list, and search form.
+                        - While some organisms might consist of different types of molecules, other organisms might consist of the same molecule repeated over and over again. For instance, visit a category page of almost any e-commerce website and you’ll see a listing of products displayed in some form of grid
+                       <br>  HTML & CSS Examples include: header organism
+                      </p>
+
+                      <h4>Templates</h4>
+                      <p>
+                        - Templates place components within a layout and demonstrate the design’s underlying content structure <br>
+                        - Templates include all the necessary page components functioning together, which provides context for these relatively abstract molecules and organisms.
+                        - When crafting an effective design system, it’s critical to demonstrate how components look and function together in the context of a layout to prove the parts add up to a well-functioning whole.
+                        - Another important characteristic of templates is that they focus on the page’s underlying content structure rather than the page’s final content.
+                      </p>
+
+                      <h4>Pages</h4>
+                      <p>
+                        The page stage is the most concrete stage of atomic design, and it’s important for some rather obvious reasons. After all, this is what users will see and interact with when they visit your experience. 
+                        - Pages apply real content to templates and articulate variations to demonstrate the final UI and test the resilience of the design system.
+                        - In addition to demonstrating the final interface as your users will see it, pages are essential for testing the effectiveness of the underlying design system. It is at the page stage that we’re able to take a look at how all those patterns hold up when real content is applied to the design system.
+                        Does everything look great and function as it should? If the answer is no, then we can loop back and modify our molecules, organisms, and templates to better address our content’s needs.
+                        - We must create systems that establish reusable design patterns and also accurately reflect the reality of the content we’re putting inside of those patterns.
+                        Pages also provide a place to articulate variations in templates, which is crucial for establishing robust and reliant design systems. Here are just a few examples of template variations:
+                      </p>
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+
+                        <article>
+                            <h4><em> </em></h4>
+                            <p>
+                            
+                            </p>
+                        
+                            <p>
+                    
+                            </p>
+
+                        </article>   
+                    </div>
+                    
+                    <p><a href=".html"> </a></p>
+                    <p><a href=""></a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN and A Complete Guide to Flexbox Article</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

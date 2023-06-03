@@ -1,0 +1,343 @@
+// A variable in Sass always starts with a dollar sign ($), whether you are using it for
+//  assignment or retrieval.
+//  NOTE: SASS COMMENTS = // BUT /* */ CAN BE USED. // DOES NOT GET CONVERTED IN CSS FILE ONLY /* */ 
+
+$first-color-variable: red;
+
+// To use the variable:
+.inside-text { 
+    color: $first-color-variable 
+}
+
+
+// STRINGS
+$name: 'Hugo';
+
+.foo {
+    content: 'Hello ' + $name + '!'; // Hello Hugo!
+}
+
+// STRING INTERPOLATION
+
+$name1: 'Hugo';
+
+.foo {
+    content: 'Hello #{$name1}!';
+}
+
+// One of the most common use cases for interpolating a variable is within the 
+// calc(..) CSS function.
+.main {
+    $sidebar-width: 300px;
+    width: calc(100% - #{$sidebar-width}); // calc(100% - 300px)
+}
+
+// Interpolation in media queries: Sass will only evaluate Sass variables in a media query
+// if they’re within a pair of parentheses.This is for dynamically generated selectors.
+$media: screen;
+$feature: min-width;
+$value: 1337px;
+@media #{$media} and ($feature: $value) {
+    // …
+}
+
+// compiled as:
+@media screen and (min-width: 1337px) {}
+
+// To use a variable in a selector, we have to interpolate it:
+$section: 'home';
+
+.section-#{$section} {
+    background: transparent;
+}
+
+// LISTS
+$value: Hello world;
+$type: type-of($value); // list
+$length: length($value); // 2
+$separator: list-separator($value); // space
+
+$value: ('Hello', 'world');
+$type: type-of($value); // list
+$length: length($value); // 2
+$separator: list-separator($value); // comma
+
+$value: ('Hello', 'world');
+$type: type-of($value); // list
+$length: length($value); // 2
+$separator: list-separator($value); // comma
+
+$value: ('foo',);
+$length: length($value); // 1
+$type: type-of($value); // list
+
+
+// MAPS
+$message-themes: (
+    'info': deepskyblue,
+    'danger': tomato,
+    'warning': gold,
+    'confirm': lightgreen,
+);
+
+// picking a specific value from the map based on its key using the map-get(..) function:
+.message-info { color: map-get($message-themes, 'info'); }
+.message-danger { color: map-get($message-themes, 'danger'); }
+.message-warning { color: map-get($message-themes, 'warning'); }
+.message-confirm { color: map-get($message-themes, 'confirm'); }
+
+// keys of a map can be of any type and not just strings. Yes, lists and maps as well, although they have
+// to remain unique:
+$color-names: (
+    #ff0000: 'blood',
+    #00ff00: 'grass',
+    #0000ff: 'ocean',
+);
+
+// Creating Meaningful Variables.Sass does not support actual constants.
+// if used, then uppercase letters separated with underscores.
+
+// Yep
+$brand-color: #BADA55;
+// Nope
+$brand_color: #BADA55;
+// Definitely nope
+$brandColor: #BADA55;
+// Stop it
+$BrandColor: #BADA55;
+// Why are you doing this?
+$BrAnDcOlOr: #BADA55;
+
+// Naming color variables
+// Here we store our hard-to-read colors in simple descriptive variables; then use these
+// variables in more generic ones.
+$gold: hsl(42, 78%, 54%);
+$dark-blue: rgb(13, 33, 70);
+$primary-theme-color: $gold;
+$secondary-theme-color: $dark-blue;
+
+
+/**
+* Declaring a CSS custom property named `main-color` at root level
+* so that it is accessible anywhere in the document
+*/
+:root {
+    --main-color: #BADA55;
+}
+/**
+* Using the `main-color` variable through the `var(..)` function
+*/
+body {
+    background-color: var(--main-color);
+}
+
+// It is recommended
+// to declare global variables on :root because it’s the root of the document,
+// making those custom properties accessible anywhere in it.
+
+// with
+// JavaScript, for instance. Changing a whole color theme might take nothing more
+// than changing the value of a variable on the root element, thanks to CSS custom
+// properties:
+
+// Styles from the :root element
+// var styles = window.getComputedStyle(document.documentElement);
+
+// // Get current color set in `--main-color` variable
+// var color = styles.getPropertyValue('--main-color');
+
+// // Replace the color with a new value; now all elements using
+// // `--main-color` will be updated with the new color value. Handy!
+// document.documentElement.styles.setProperty('--main-color',
+// ➥ 'hotpink');
+
+
+// SASS FUNCTIONS
+// Keep in mind that functions cannot be defined within mixins or other functions.
+
+// Defining sass functions
+// The `get-base-url()` function has no parameter
+@function get-base-url() {
+    @return '/assets/';
+}
+// Usage
+.module {
+    background-image: url(get-base-url() + 'unicorn.png');
+}
+
+@function multiply($a, $b) {
+    @return ($a * $b);
+}
+
+// `$a` is mandatory and `$b` is optional (default value being 2)
+@function multiply($a, $b: 2) {
+    @return ($a * $b);
+}
+
+// Required argument $b must come before any optional arguments.
+@function multiply($a: 2, $b) {
+    @return ($a * $b);
+}
+
+$element-width: 400px;
+
+// calling sass functions
+.foo {
+    // Calling `multiply(..)` with arguments in the defined order
+    width: multiply($element-width, 3); // 1200px
+    // Calling `multiply(..)` relying on default value
+    // for second parameter
+    padding: multiply(10px); // 20px
+}
+.bar {
+    // Calling `multiply(..)` using keyword arguments
+    width: multiply($b: 3, $a: $element-width); // 1200px
+}
+
+// Another example
+@function set-color-theme(
+    $primary,
+    $secondary: darken($primary, 10%),
+    $tertiary: lighten($primary, 10%)
+) {
+// Do something
+}
+
+$color-theme: set-color-theme(hotpink, $tertiary: pink);
+// In this example:
+// ■ $primary is passed without being named, simply as a first argument;
+// ■ $secondary is left to its default value;
+// ■ $tertiary is named and set to pink.
+
+// USING SASS FUNCTIONS
+
+// Just for the sake of demonstration, here's a function declaration
+@function my-function() {
+    @return 'foo';
+}
+
+// Calling the function in itself does not work and throws an error:
+// > `Invalid CSS after " my-function()": expected "{", was ";"`
+.foo {
+    my-function();
+}
+
+// Calling the function in place of a property works as long as it
+// is properly interpolated. See chapter 3.
+.foo {
+    #{my-function()}: 'bar';
+}
+
+// Calling the function in place of a selector works as long as it
+// is properly interpolated. See chapter 3.
+.foo, #{my-function()} {
+    content: 'bar';
+}
+
+// Calling the function inside a variable value works perfectly.
+$foo: my-function();
+
+// Calling the function in place of a media query value works
+// perfectly.
+@media (min-width: my-function()) { .. }
+
+// Calling the function in place of a feature query value works
+// perfectly.
+@supports (content: my-function()) { .. }
+
+// SASS MIXINS
+
+// Let’s create our first mixin; a utility to help horizontally center a block element:
+@mixin center {
+    width: 100%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Calling a mixin
+.container {
+    @include center;
+}
+
+// This will result into
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Parameters in maxins;
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// Usage
+.foo {
+    @include size(100%, 42px);
+}
+
+.bar {
+    @include size(100px);
+}
+
+// When compiling this code, Sass will render:
+.foo {
+    width: 100%;
+    height: 42px;
+}
+
+.bar {
+    width: 100px;
+    height: 100px;
+}
+
+
+// Mixins @content directive
+// The @content directive—which has no other form than simply @content—allows
+// authors to pass block of styles to their mixins.
+@mixin on-event {
+    &:hover,
+    &:active,
+    &:focus {
+        @content;
+    }
+}
+.foo {
+    color: blue;
+    @include on-event {
+        color: red;
+    }
+}
+
+// CSS output:
+.foo {
+    color: blue;
+}
+
+.foo:hover, .foo:active, .foo:focus {
+    color: red;
+}
+
+// PRACTICE EXAMPLE MIXIN
+@mixin message($color, $background-color: lighten($color, 20%)) {
+    color: $color;
+    background-color: $background-color;
+}
+
+.message {
+    padding: 10px;
+    border: 1px solid currentcolor;
+}
+.message-info {
+    @include message(blue);
+}
+.message-danger {
+    @include message(red);
+}
+.message-confirm {
+    @include message(green);
+}

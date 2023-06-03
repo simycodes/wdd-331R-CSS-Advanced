@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 5 Notes: Flexbox</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Revise Flexbox properties here(CSS tricks)</a></li>
+                    <li><a href="https://flexboxfroggy.com/" target="_blank">FLEXBOX FROGGY - Practice your Flex box skills here</a></li>
+                    <li><a href="./week-5-flexbox-tiled-media/index.html" target="_blank">Flexbox tiles media webpage</a></li>
+                    <li><a href="flexbox-basics.html" target="_blank">Flexbox basics web page</a></li>
+                    <li><a href="flexbox-flex-flow-property.html" target="_blank">Flexbox: flex-flow property</a></li>
+                    <li><a href="flexbox-alignment.html" target="_blank">Flexbox: vertical and horizontal alignment</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS Flexbox</h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>Flexbox</em></h3>
+                      <p>
+                        Flexbox is a one-dimensional layout method for arranging items in rows or columns. 
+                        Items flex (expand) to fill additional space or shrink to fit into smaller spaces.
+                      </p>
+                      <p>
+                        The main idea behind the flex layout is to give the container the ability to alter its 
+                        items’ width/height (and order) to best fill the available space (mostly to 
+                        accommodate to all kind of display devices and screen sizes). 
+                        <br> <br>
+                        Some of flex properties are meant to be set on the container (parent element, known 
+                        as “flex container”) whereas the others are meant to be set on the children 
+                        (said “flex items”).
+                        The properties for the parent element (the flex container) and the child elements
+                        (the flex items). 
+                      </p>
+                      <p>
+                        Note: Flexbox layout is most appropriate to the components of an application, and 
+                        small-scale layouts, while the Grid layout is intended for larger scale layouts. <br>
+                        
+                      </p>
+                      <h3><em>Common flexbox Properties</em></h3>
+                      <p>
+                        <ul>
+                            <li>display: flex = Makes an element a flex container and its children to become flex items.</li>
+                            <li>flex-direction: row(default)/column/row-reverse/column-reverse = that specifies which direction the main axis runs (which direction the flexbox children are laid out in).</li>
+                            <li>flex-wrap: wrap = makes elements wrap down/go down the layout when space is finished in the line they are placed in</li>
+                            <li>flex: A shorthand property that can specify up to three different values: flex-grow , flex-shrink, flex-basis </li>
+                            <li>justify-content: flex-start/flex-end/center/space-between/space-around/ = This controls where the flex items sit on the main axis.</li>
+                            <li>align-items:flex-start/flex-end/center/stretch = This controls where the flex items sit on the cross axis.
+                                <b>You can override the align-items behavior for individual flex items by applying the align-self property to them. </b>
+                            </li>
+                            <li>order: Used for changing the layout order of flex items without affecting the source order
+                                <b>NOTE: By default, all flex items have an order value of 0.
+                                    Flex items with higher specified order values will appear later in the display order than items with lower order values.
+                                </b>
+                            </li>
+                        </ul>
+                      </p>
+
+                      <p>
+                                                    --- parent element (the flex container)
+
+                            - display: flex 
+                            - flex-direction
+                            - flex-wrap
+                            - flex-flow (flex-dorection and flex-wrap shorthand)
+                            - justify-content: flex-start/flex-end/center/space-between/space-around/stretch
+                            - align-items:flex-start/flex-end/center/stretch
+                            - align-content: flex-start/flex-end/center/space-between/space-around/stretch
+                            NOTE on align-content: This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+                            This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse)
+
+                            <br> <br>
+                            --- child elements (the flex items)
+
+                            - flex-grow 
+                            - flex-shrink 
+                            - flex-basis
+                            - flex: A shorthand property that can specify up to three different values: flex-grow , flex-shrink, flex-basis
+                            - align-self: overrides the align-items behavior for individual flex items by applying the align-self property to flex item
+                            - order: Used for changing the layout order of flex items without affecting the source order NOTE:
+                            By default, all flex items have an order value of 0. Flex items with higher specified 
+                            order values will appear later in the display order than items with lower order values.
+                      </p>
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+
+                        <article>
+                            <h4><em> </em></h4>
+                            <p>
+                            
+                            </p>
+                        
+                            <p>
+                    
+                            </p>
+
+                        </article>   
+                    </div>
+                    
+                    <p><a href=".html"> </a></p>
+                    <p><a href=""></a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN and A Complete Guide to Flexbox Article</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

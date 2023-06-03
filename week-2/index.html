@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 2 Notes</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="attribute-selector-example.html">Attribute Selectors example</a></li>
+                    <li><a href="pseudo-class-and-elemet-example.html">Pseudo-classes and pseudo-elements selectors</a></li>
+                    <li><a href="https://flukeout.github.io/#">CSS Diner - Practice your CSS skills here</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS Selectors, CSS Specificity </h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>CSS Selectors</em></h3>
+                      <p>
+                        In CSS, selectors are used to target the HTML elements on our web pages that we want to style.
+                        A CSS selector is the first part of a CSS Rule.The element or elements which are selected by the selector are referred to as the subject of the selector.
+                        With selector lists, a combined selector can be used as -- h1, .special {color: blue;} -- to affect the same element.
+                      </p>
+                    </article>
+                    
+                    <!-- sub topic goes here -->
+                    <article>
+                       <h3><em>Types of selectors</em></h3>
+                       <h4>1.Type, class, and ID selectors</h4>
+                       <p>
+                        Type: target an HTML element such as an h1 -- h1 { }-- <br>
+                        class: selectors which target a class: -- .box { } -- <br>
+                        an ID: -- #unique { } --
+                        <b></b>
+                        </p>
+
+                        <h4>2.Attribute Selectors</h4>
+                        <p>
+                          These select elements based on the presence of a certain attribute on an element:
+                          -- a[title] { } --<br>
+                          Or even make a selection based on the presence of an attribute with a particular value:
+                          -- a[href="https://example.com"]{ }  --
+                        </p>
+
+                        <h4>3.Pseudo-classes and pseudo-elements</h4>
+                        <p>
+                          <b>These style certain states of an element.</b> The :hover pseudo-class for example selects 
+                          an element only when it is being hovered over by the mouse pointer: -- a:hover { } -- or it is the first element of their type 
+                          <br>
+                          <b>Pseudo-classes are keywords that start with a colon. For example, :hover is a pseudo-class.</b>
+                          <br>
+                          It also includes <b>pseudo-elements, which select a certain part of an element</b> rather than the element itself.
+                          For example, -- ::first-line -- always selects the first line of text inside an element 
+                          --  p::first-line { } -- <br>
+                          They act as if you had added a whole new HTML element into the markup(usually inside another element-before or after), rather than applying a class to existing elements.
+                          <b>Pseudo-elements start with a double colon ::. ::before is an example of a pseudo-element.</b>
+                          <br>
+                          <b>NOTE: pseudo element selectors help generate content via CSS by combining the content CSS property with the ::before or ::after pseudo-element. This  -content- may be either plain text or a container that we manipulate with CSS to display a graphic shape or decorative element. </b>
+                        </p>
+
+                        <p>
+                            <b>Most used pseudo class include</b>
+                                :link -
+                                Use this class to add special style to an unvisited link.
+                                :visited -
+                                Use this class to add special style to a visited link.
+                                :hover -
+                                Use this class to add special style to an element when you mouse over it.
+                                :active -
+                                Use this class to add special style to an active element.
+                                :focus -
+                                Use this class to add special style to an element while the element has focus.
+                                :first-child -
+                                Use this class to add special style to an element that is the first child of some other element.
+                                :lang -
+                                Use this class to specify a language to use in a specified element. :nth-child,:nth-of-type(), :nth-of-type(2n+3),:empty, :not(-id/class etc-) :only-of-type, :last-of-type
+                        </p>
+
+                        <p>
+                            <b>Most used pseudo elements include</b>
+                            ::after, ::before and ::first-letter,::first-line 
+                        </p>
+
+                        <h4>4.Combinators</h4>
+                        <p>
+                            These selectors combine other selectors in order to target elements within our documents.
+                            The following, for example, selects paragraphs that are direct children of -article- 
+                            elements using the child combinator (>): -- article > p { } -- <br><br>        
+                        </p>
+                        <p>
+                            <b>The child combinator (>) is placed between two CSS selectors.</b> It matches only those elements matched by the second selector that are the direct children of elements matched by the first
+                            i. > when used =  article > p { } -- select p elements that are direct children of article elements
+                            <br>
+                            <b>The adjacent sibling selector (+) is placed between two CSS selectors.</b>
+                            It matches only those elements matched by the second selector that are the next sibling element of the first selector.
+                             ii. + when used =  p + img -- select img elements that are immediate sibling(immediate below or immediate above) elements of p elements
+                             <b>A common use case is to do something with a paragraph that follows a heading,</b>
+                             <br>
+                            <b>General sibling combinator is placed between two CSS selectors.</b>
+                            If you want to select siblings of an element even if they are not directly adjacent, then you can use the general sibling combinator (~).
+                             iii. ~ when used =  p ~ img -- select all img elements that come anywhere after p elements
+                        </p>
+                        
+                        <p>
+                            <b>
+                                It is often better to create a simple class and apply that to the element in question. That said, your knowledge of combinators will be very useful if you need to style something in your document and are unable to access the HTML, perhaps due to it being generated by a CMS.
+                            </b>
+                        </p>
+                       
+                    </article>
+
+                    <article>
+                      <h3><em>CSS Specificity</em></h3>
+                      <p>Selector Specificity/Weight of Selectors.If two CSS selectors apply to the same element, the one with higher specificity wins.</p>
+                      <h4>Selectors Specificity (Weight)</h4>
+                      <p>
+                        0.Inline styles (Presence of style in document).<br>
+                        1.IDs<br>
+                        2.Classes, Pseudo-classes, Attributes<br>
+                        3.Elements, Pseudo-elements.
+                      </p>
+                      <h4>Specificity Overview</h4>
+                      <p>
+                        1.	Specificity determines, which CSS rule is applied by the browsers. <br>
+                        2.	Every selector has its place in the specificity hierarchy.<br>
+                        3.	If two selectors apply to the same element, the one with higher specificity wins.<br>
+                        4.	There are five distinct categories which define the specificity level of a given selector: 
+                        inline styles, IDs, classes, attributes, and elements.<br>
+                        5.	When selectors have an equal specificity value, the latest rule is the one that counts.<br>v
+                        6.	When selectors have an unequal specificity value, the more specific rule is the one that counts.<br>
+                        7.	Rules with more specific selectors have a greater specificity.<br>
+                        8.	ID selectors have a higher specificity than attribute selectors.<br>
+                        9.	You should always try to use IDs to increase the specificity.<br>
+                        10.	A class selector beats any number of element selectors.<br>
+                        11.	The universal selector and inherited selectors have a specificity of 0, 0, 0, 0.<br>
+                        12.	You can calculate CSS specificity with CSS Specificity Calculator <br>
+                      </p>
+
+                      <h4>CSS Specificity Calculator: How To Measure Specificity?</h4>
+                      <p>
+                        Memorize how to measure specificity. <br>
+                        Start at 0, <br>
+                        -	add 1000 for style attribute[Inline styles (Presence of style in document).]<br>
+                        -	add 100 for each ID, <br>
+                        -	add 10 for each attribute, class or pseudo-class,<br>
+                        -	add 1 for each element name or pseudo-element.<br>
+                        So in<br>
+                        body #content .data img:hover<br>
+                        The specificity value would be 122 (0,1,2,2 or 0122): <br>
+                        100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.” [CSS Specificity]
+                      </p>
+
+                      <p>
+                        <b>Alternative way:</b><br>
+                         Count the number of ID attributes in the selector (= a). <br>
+                        Count the number of other attributes and pseudo-classes in the selector (= b). <br>
+                        Count the number of element names and pseudo-elements in the selector (= c).<br>
+                        Concatenating the three numbers a-b-c gives the specificity.<br><br>
+
+                        <b>NOTE: Specificity is shown/given out as a 4 or 3 digit value 122 (0,1,2,2 or 0122):</b> <br>
+                        - In a 3 digit value, first place is id,second is class and last digit is element. 122 or 1,22<br>
+                        -  In a 4 digit value, first place is (inline css), second is id, third is class, fourth is element. 0122 or 0,1,2,2<br>
+
+                        - * { } is 0000 and body {} is 0001
+                      </p>
+
+                      <h4>NOTE: Equal specificity: the latest rule is the one that counts.</h4>
+                      <h4>Specificity Rules</h4>
+                      <p>
+                        <b>1.ID selectors have a higher specificity than attribute selectors</b><br>
+                        <b>2.Inline CSS beats Selectors in an external CSS file</b><br>
+                        <b>3.A class selector beats any number of element selectors.</b><br>
+                        <b>4.The universal selector has a specificity of 0, 0, 0, 0. *, body * and similar selectors have a zero specificity. Inherited values also have a specificity of 0, 0, 0, 0.</b><br>
+                      </p>
+                      
+                      <h4>Specificity Example</h4>
+                      <div class="notes-image">
+                        <img src="../images/specificity-example.png" width="600" height="300" alt="">
+                      </div>
+                      
+                      
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+
+                        <article>
+                            <h4><em> </em></h4>
+                            <p>
+                            
+                            </p>
+                        
+                            <p>
+                    
+                            </p>
+
+                        </article>   
+                    </div>
+                    
+                    <p><a href=".html"> </a></p>
+                    <p><a href=""></a></p>
+                    <p><b>NOTE:</b> Resources used include N2N, www.smashingmagazine.com</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

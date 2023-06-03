@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 7 Notes: CSS Grid</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="./grid-basics.html" target="_blank">Grid Basics Example</a></li>
+                    <li><a href="http://cssgridgarden.com/" target="_blank">CSS Grid Garden Exercises</a></li>
+                    <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Tricks - Grid</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">MDN Grid Reference</a></li>
+                    <li><a href="https://gridbyexample.com/learn" target="_blank">Learn Grid by Example</a></li>
+                    <li><a href="./grid-image-gallery/image-gallery.html" target="_blank">Grid Image Gallery</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS Grid</h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>Grid</em></h3>
+                        <p>
+                         Grid layout is used to align elements into columns and rows.
+                         A CSS Grid is used to divide a web page or container into columns and rows, along with
+                         the ability to position and size the building block elements based on the rows and columns
+                         we have created in terms of size, position, and layer.
+                         The grid also gives us a flexible way to change the position of elements with only CSS
+                         without any change to the HTML. This can be used with media queries to alter the layout at different breakpoints.
+                        </p>
+
+                        <h3><em>Common Grid Properties</em></h3>
+                        <p>
+                            <ul>
+                                <li>grid: Makes an element a grid container (display: grid)</li>
+                                <li>grid-template-columns: Creates columns of the grid with a space-separated list of values. </li>
+                                <li>grid-template-rows: Defines rows of the grid with a space-separated list of values. </li>
+                                <li>grid-auto-columns: Specifies the size of any auto-generated grid columns-tracks </li>
+                                <li>grid-auto-rows: Specifies the size of any auto-generated grid row-tracks </li>
+                                <li>grid-column-gap: Creates a ga between the columns</li>
+                                <li>grid-row-gap: Creates a ga between the rows </li>
+                                <li>grid-gap (short-hand for grid-column-gap and grid-row-gap)</li>
+                            </ul>
+                        </p>
+
+                        <h4>Parent (specific) Grid Properties</h4>
+                        <ul>
+                            <li>justify-items: Aligns grid items along the inline (row) axis - start/end/center/stretch</li>
+                            <li>align-items: Aligns grid items along the block (column) axis - start/end/center/stretch(default)/baseline</li>
+                            <li>place-items: place-items sets both the align-items and justify-items properties in a single declaration.-align-items- / -justify-items> – The first value sets align-items, the second value justify-items.</li>
+                            <li>justify-content: This property aligns the grid along the inline (row) axis. start/end/center/stretch/space-around/space-between-space-evenly</li>
+                            <li>align-content: This property aligns the grid along the block (column) axis. start/end/center/stretch/space-around/space-between-space-evenly</li>
+                            <li>place-content: place-content sets both the align-content and justify-content properties in a single declaration.</li>
+                        </ul>
+
+                        <h4>Grid cells/children specific Properties</h4>
+                        <ul>
+                            <li>grid-column-start</li>
+                            <li>grid-column-end </li>
+                            <li>grid-column (short-hand for grid-column-start and grid-column-end)</li>
+                            <li>row-column-start</li>
+                            <li>row-column-end</li>
+                            <li>grid-row (short-hand for grid-row-start and grid-row-end)</li>
+                            <li>justify-self: Aligns a grid item inside a cell along the inline (row) axisb - start | end | center | stretch;</li>
+                            <li>align-self: Aligns a grid item inside a cell along the block (column) axis - start | end | center | stretch;</li>
+                            <li>place-self: place-self sets both the align-self and justify-self properties in a single declaration.</li>
+                        </ul>
+
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+                        <article>
+                            <h4><em> </em></h4>
+                            <p></p>
+                        </article>   
+                    </div>
+                    <p><a href=".html"> </a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN, CSS Tricks Grid, CSS Master Book</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

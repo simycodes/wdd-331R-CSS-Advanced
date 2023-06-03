@@ -1,0 +1,187 @@
+// VARIABLES
+$circle-color: darkred;
+$container-color: teal;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container {
+    height: 25vmin;
+    width: 25vmin;
+    background-color: $container-color;
+}
+
+/* BOX-1 STYLES AND ANIMATIONS */
+.container-one {
+    padding: 1vmin;
+}
+
+.orbiting-circle {
+    height: 25%;
+    width: 25%;
+    background-color: $circle-color;
+    border-radius: 50%;
+    animation: orbit 3s linear infinite;
+}
+
+ @keyframes orbit-no-pauses {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(300%,0%); }
+    50% { transform: translate(300%,300%); }
+    75% { transform: translate(0%,300%); }
+    100% { transform: translate(0%,0%); }
+}
+
+ @keyframes orbit-no-pauses-px-units {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(110px,0); }
+    50% { transform: translate(110px,110px); }
+    75% { transform: translate(0,110px); }
+    100% { transform: translate(0,0); }
+}
+
+/* THIS WILL ORBIT WITH PAUSES AT EACH CORNER */
+@keyframes orbit {
+    0% { transform: translate(0,0); }
+    5% { transform: translate(0,0); } /* don't change for 5% of the time...pause */
+    25% { transform: translate(300%,0%); } /* start moving again */
+    30% { transform: translate(300%,0%); } /* pause */
+    50% { transform: translate(300%,300%); } /* move */
+    55% { transform: translate(300%,300%); }
+    75% { transform: translate(0%,300%); }
+    80% { transform: translate(0%,300%); }
+    100% { transform: translate(0%,0%); }
+}
+
+/* BOX-2 STYLES AND ANIMATIONS */
+.container-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.morphing-circle {
+    height: 25%;
+    width: 25%;
+    background-color: $circle-color;	
+    border-radius: 50%;
+    animation: morphing-circle-square 3s linear infinite; 
+}
+
+@keyframes morphing-circle-square {
+    0% {border-radius: 50%}
+    25% { /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+        border-radius: 50%;
+        background-color: $circle-color;
+    }
+    50% { /* now change to white square...but don't start rotating yet! */
+        border-radius: 0%;
+        background-color: white;
+        transform: rotate(0deg);
+    }
+    75% { /* stay a white square, but rotate 90deg */
+        border-radius: 0%;
+        background-color: white;
+        transform: rotate(90deg);   
+    }
+    100% { /* stay rotated at 90, but change back to a circle */
+        border-radius: 50%;
+        background-color: $circle-color;
+        transform: rotate(90deg);
+    }
+}
+
+/* BOX-3 STYLES AND ANIMATIONS */
+.container-three, .container-four {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.moving-semi-circle-one {
+    height: 25%;
+    width: 12.5%;
+    background-color: $circle-color;	
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    animation: moving-semi-circle-one 3s linear infinite;
+}
+
+.moving-semi-circle-two {
+    height: 25%;
+    width: 12.5%;
+    background-color: $circle-color;	
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+    animation: moving-semi-circle-two 3s linear infinite;
+}
+
+
+@keyframes moving-semi-circle-one {
+    30% { 
+        transform: translateX(0); /* don't change for 30% of the time...pause */
+    } 
+    50% { 
+        transform: translateX(-70%); /* don't change for 30% of the time...pause */
+    }
+    80% { 
+        transform: translateX(-70%); 
+    }
+    100% { 
+        transform: translateX(0%); 
+    }
+}
+
+@keyframes moving-semi-circle-two {
+    30% { 
+        transform: translateX(0); /* don't change for 30% of the time...pause */
+    } 
+    50% { 
+        transform: translateX(70%); /* don't change for 30% of the time...pause */
+    }
+    80% { 
+        transform: translateX(70%); 
+    }
+    100% { 
+        transform: translateX(0%); 
+    }
+}
+
+/* BOX-4 STYLES AND ANIMATIONS */
+.beating-circle {
+    height: 25%;
+    width: 25%;
+    background-color: $circle-color;
+    border-radius: 50%;	
+    animation: heart-beat 1.5s linear infinite;
+}
+
+@keyframes heart-beat {
+    30% { 
+        transform: scale(1); /* don't change for 30% of the time...pause */
+    } 
+    40% { 
+        transform: scale(1.1);
+    }
+    50% { 
+        transform: scale(1);
+    }
+    60% { 
+        transform: scale(1.1);
+    }
+    70% { 
+        transform: scale(1);
+    }
+    100% { 
+        transform: scale(1); 
+    }
+}

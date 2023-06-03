@@ -1,0 +1,140 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*----------- BODY --------------*/
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.5;
+    background-color: #e5e5e5;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-left: 1rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #2B2D42;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align:center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+
+/*----------- MAIN PORTFOLIO HOME PAGE--------------*/
+
+body div {
+    margin: 0.5rem;
+    padding: 0.2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin-bottom: 3rem;
+    background-color: #8d99ae;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.notes {
+    max-width: 1400px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+main article p {
+    line-height: 1.3rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.my-name {
+    margin-top:none;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.notes-heading {
+    text-decoration: underline;
+}
+
+section h2 {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+ol li {
+    margin:.5rem;
+ }
+
+ ol li a {
+    color: black;
+    transition: all .4s;
+}
+
+ol li a:hover {
+    color:#EDF2F4;
+    font-weight: bold;
+}
+
+.notes-image {
+    width: 370px;
+    height: 160px;
+    margin: 0 auto; 
+    /* border: 2px solid red; */
+}
+
+.notes-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.example-title {
+    font-size: 30px;
+}
+
+footer div {
+    max-width: 500px;
+}
+
+footer p {
+    font-size: 17px;
+    margin: 10px;
+}
+
+/*----------- END OF WEEKLY EXAMPLE APPLICATION PAGE --------------*/

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 6 Notes: Transitions and Animations</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://www.w3schools.com/cssref/css_animatable.php" target="_blank">W3 Schools Animatable List of animatable properties.</a></li>
+                    <li><a href="https://projects.verou.me/animatable/#font-size" target="_blank">Lea Verou's Animatable Examples of the animatable properties</a></li>
+                    <li><a href="https://css-tricks.com/almanac/properties/a/animation/" target="_blank">CSS Tricks Animations</a></li>
+                    <li><a href="https://easings.net/#" target="_blank">Easing Function Cheat Sheet - several ready-made cubic-bezier</a></li>
+                    <li><a href="https://cubic-bezier.com/" target="_blank">Make Smooth transitions using cubic-bezier function </a></li>
+                    <li><a href="flexbox-alignment.html" target="_blank">Flexbox: vertical and horizontal alignment</a></li>
+                    <li><a href="./week-6-assignment/week-6-assignment-animations-code/index.html" target="_blank">Animations In Action Assignment</a></li>
+                    <li><a href="./week-6-assignment/sliding-curtain-task-code/index.html" target="_blank">Sliding Curtain Animations </a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS: Animations and Transitions</h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>Animations</em></h3>
+                      <h4> 
+                        <i>
+                           NOTE:Both transition and animation property are used to add some form of animation to property changes of elements.
+                           They help animate a property from one state to another. <br>
+                           Transition property is mostly used with pseudo selectors(properties to be changed by pseudo selectors) WHILE animations are used with any selectors
+                           <br> <br>
+                           Transition and animations basic-major properties have the same suffix, only the prefix changes from transition to animation. <br>
+                           Example: transition-property is animation-property and the shorthand: transition is  animation
+                        </i>
+                      </h4>
+
+                      <p>
+                        <b>
+                          Animations are like functions that contain code of how a property/properties of an element will change over a given period of time.
+                          These animations functions are then called in the styles of the element that needs their services. 
+                        </b>
+                        <br>
+                        As animations are like functions, they are created with the keyword @keyframes, Example: <br> <b>@keyframe -nameOfAnimation- { -animation definition- }.</b>  <br>
+                        Then the animation function is called in the style of a specific element, Example: <br>  <b>animation: -nameOfAnimation- 5s infinite;</b>
+                      </p>
+
+                      <h3>Animation Properties</h3>
+                      <p>
+                          animation-delay	How long to wait before executing the animation	0s (executes immediately) <br>
+                          animation-duration	How long the cycle of an animation should last	0s (no animation occurs) <br>
+                          animation-name	The name of an @keyframes rule	none  <br>
+                          animation-timing-function	How to calculate the values between the start and end states	ease <br>
+                          animation-iteration-count	How many times to repeat the animation	1 <br>
+                          animation-direction	Whether or not the animation should ever play in reverse	normal (no reverse) <br>
+                          animation-play-state	Whether the animation is running or paused	running <br>
+                          animation-fill-mode	Specifies what property values are applied when the animation isn’t running	none <br>
+                      </p>
+
+                      <h4>Difference between Transitions and Animations</h4>
+                      <p>
+                         With a transition, you define start and end states, and the browser fills in the states in between. With an animation, on the other hand, you can define those in-between states to control how the animation progresses.
+                      </p>
+                    </article>
+
+
+                     <article>
+                      <h3><em>Transitions</em></h3>
+                      <p>
+                        <b>
+                          CSS transitions are a CSS-based way—as opposed to a JavaScript way—to update the value of a CSS property over a specified duration 
+                        </b>
+                        <br>
+                        Transitions need to be triggered by some kind of event. Often, this is a user interaction.
+                        We might transition between colors when entering and leaving a :hover state, as we’ve done here.
+                        But we can also trigger a transition by adding or removing a class name using JavaScript.
+                      </p>
+
+                      <h3>Transition Properties</h3>
+                      <p>
+                        transition-duration:	How long the transition should last	0s (no transition) <br>
+                        transition-property:	Which property to transition	all (all animatable properties) <br>
+                        transition-timing-function:	How to calculate the values between the start and end values	ease <br>
+                        transition-delay:	How long the browser should wait between changing the property and starting the transition   
+                      </p>
+
+                      <p>NOTE: We can’t transition every property. We can only use transitions with properties 
+                        that accept interpolatable values. Interpolation is a method of calculating values 
+                        that fall within a range. These values are typically numeric unit values such as 
+                        lengths, percentages, or colors. That means we can’t transition between 
+                        visibility: visible and visibility: hidden, or display: block and display: none. 
+                        Nor can we transition to or from auto values. <br> <br>
+                        Smooth transitions use the cubic-bezier function to interpolate values
+                      </p>
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+
+                        <article>
+                            <h4><em> </em></h4>
+                            <p>
+                            
+                            </p>
+                        
+                            <p>
+                    
+                            </p>
+
+                        </article>   
+                    </div>
+                    
+                    <p><a href=".html"> </a></p>
+                    <p><a href=""></a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN, CSS Master</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>
