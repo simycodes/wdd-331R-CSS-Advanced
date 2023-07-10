@@ -1,0 +1,55 @@
+/* DECLARING A CSS VARIABLE */
+:root {
+  --primary: goldenrod;
+}
+
+body {
+    background: linear-gradient(to left, #3b8d99, #6b6b83, #aa4b6b); 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+}
+
+.wrapper div {
+    margin-top: 10px;
+    background-color: var(--primary);
+}
+
+/* IMPLEMENTING CUSTOM PROPERTIES AND VARIABLES */
+
+
+
+/* USING A CSS VARIABLE WITH var() FUNCTION */
+/* provide a fallback to the var() function */
+h1 {
+  background: var(--primary, powderblue);
+}
+
+p {
+  color: var(--primary);
+}
+
+
+.item-1 {
+    width: min(50%, 500px);
+}
+
+.item-2 {
+    width: max(50%, 500px);
+}
+
+.item-3 {
+    width: clamp(200px, 50%, 1000px);
+}

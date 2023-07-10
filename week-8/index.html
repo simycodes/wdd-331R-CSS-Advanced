@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-8 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 8 Notes: CSS Shapes(border-radous) and Gradients</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://css-tricks.com/the-shapes-of-css/" target="_blank">CSS Tricks: The Shapes of CSS reference</a></li>
+                    <li><a href="./css-shapes-basics/css-shapes.html" target="_blank">CSS Shapes Basics in action</a></li>
+                    <li><a href="./css-tricks-gradients/linear-gradient.html" target="_blank">CSS Gradients in action</a></li>
+                    <li><a href="./heart-shape-creation/index.html">Heart Shape Creation Activity using before and after  pseudo selectors</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">MDN: border-radius</a></li>
+                    <li><a href="https://css-tricks.com/a-complete-guide-to-css-gradients/">CSS Tricks: A Complete Guide to CSS Gradients</a></li>
+                    <li><a href="https://www.smashingmagazine.com/2022/01/css-radial-conic-gradient/">Radial And Conic Gradients In Detail</a></li>
+
+                    <li><a href="https://uigradients.com/#Atlas" target="_blank">Already created gradients(Gradients Library)</a></li>
+                    <li><a href="https://projects.verou.me/css3patterns/#" target="_blank">Already created pattern using gradients</a></li>
+                    <li><a href="https://sharkcoder.com/visual/gradient" target="_blank">Uses of Gradients</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS Shapes</h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>Shapes</em></h3>
+                        <p> 
+                            CSS is capable of making all sorts of shapes. Squares and rectangles are easy, 
+                            as they are the natural shapes of the web. 
+                            We also get the ::before and ::after pseudo-elements in CSS, which give us the 
+                            potential of two more shapes we can add to the original element. 
+                            By getting clever with positioning, transforming, and many other tricks, 
+                            we can make lots of shapes in CSS with only a single HTML element.
+                        </p>
+
+                        <h4>border-radius for shapes</h4>
+                        <p>
+                            The border-radius CSS property rounds the corners of an element's outer border 
+                            edge. You can set a single radius to make circular corners, or
+                            <b>two radii to make elliptical corners.</b>
+                            For elliptical corners there are 2 parameters to the border radius declaration. 
+                            That is: param 1: The horizontal radius. param 2: the vertical radius.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3><em>Gradients</em></h3>
+                        <p>
+                            A gradient is an image and can be used anywhere images can be used, but it's 
+                            created with CSS and is made up with colors, numbers and angles. CSS gradients 
+                            allow you to create anything from a smooth gradient between two colors, right
+                            up to impressive artwork by mixing and repeating multiple gradients.
+                            <b>A gradient is set as a value to the background property</b>
+                        </p>
+                        <p>
+                            CSS gradients are typically one color that fades into another, but CSS allows you to
+                             control every aspect of how that happens, from the direction and the shape to the 
+                             colors and how they transition from one to another.
+                        </p>
+
+                        <h4>linear-gradient function()</h4>
+                        <p>
+                            <b>
+                                The linear-gradient() function generates an image of two or more colors,
+                                 progressively. It takes multiple arguments, but in its simplest configuration,
+                                you can pass 2 colors as shown below <br>
+                                .my-element { background: linear-gradient(black, white); }
+                            </b>
+                            It's called “linear” because the colors flow from left-to-right, top-to-bottom, or at any angle you chose in a single direction.
+                        </p>
+
+                        <p>
+                            You can add as many colors and color stops as you like in a linear-gradient(),
+                             and you can layer gradients on top of each other by separating each gradient 
+                             with a comma
+                        </p>
+
+                        <h4>radial-gradient() function</h4>
+                        <p>
+                            To create a gradient that radiates in a circular fashion, the radial-gradient()
+                             function steps in to help. It's similar to linear-gradient(), but instead of 
+                             specifying an angle, you optionally specify a position and ending shape.
+                        </p>
+                        <p>
+                            If you just specify colors, the radial-gradient() will auto-select the position as
+                             center and select either a circle or ellipse, depending on the size of the box.
+                        </p>
+
+                        <h4>Conic gradient</h4>
+                        <p>
+                            A conic gradient is similar to a radial gradient. Both are circular and use the center
+                             of the element as the source point for color stops. However, where the color stops 
+                             of a radial gradient emerge from the center of the circle, a conic gradient places
+                            them around the circle.
+                        </p>
+                        <p>A conic gradient has a center point in your box and starts from the top (by default), 
+                            and goes around in a 360 degree circle.
+                        </p>
+                        <p>
+                            The conic-gradient() function accepts position and angle arguments.
+                            By default, the angle is 0 degrees which starts at the top, in the center. 
+                            If you were to set the angle to be 45deg, it would be the top right corner. 
+                            The angle argument accepts any type of angle value, like the linear and radial 
+                            gradients.The position is center by default. As with radial and linear gradients, positioning can be keyword-based, or it can be defined with numeric values.
+                        </p>
+
+                        <p>
+                            If we do not specify an angle for the colors, then it is assumed that the gradient 
+                            is evenly divided between the colors, starting at 0deg and ending at 360deg. That 
+                            creates a “hard stop” where the colors bump right up to one another at 0deg and 
+                            360deg. If we introduce a third value, then that creates a smoother gradient and
+                            we start to get that cool cone-looking perspective.
+                        </p>
+    
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+                        <article>
+                            <h4><em> </em></h4>
+                            <p></p>
+                        </article>   
+                    </div>
+                    <p><a href=".html"> </a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN, CSS Tricks: The Shapes of CSS, web.dev, CSS-Tricks - A Complete Guide to CSS Gradients</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

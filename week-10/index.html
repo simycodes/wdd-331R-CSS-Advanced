@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 10 Notes: Custom Properties and Functions</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="./custom-properties-variables-basics/index.html">CSS variables basics example</a></li>
+                    <li><a href="./min(),max()&clamp()-example/index.html">min(), max(), clamp() in action</a></li>
+                    <li><a href="https://ishadeed.com/article/css-min-max-clamp/" target="_blank">Guide to min(), max(), and clamp() CSS Functions</a></li>
+
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>Custom Properties and Functions</h2>
+
+                    <article>
+                        <h3>Custom Properties</h3>
+                        <p>
+                            Custom properties (sometimes referred to as CSS variables or cascading variables) 
+                            are entities defined by CSS authors that contain specific values to be reused 
+                            throughout a document. They are set using custom property notation 
+                            (e.g., --main-color: black;) and are accessed using the var() function 
+                            (e.g., color: var(--main-color);). <br>
+                            CSS variables are custom properties that cascade normally and inherit.
+                            <b>
+                                Custom properties allow a value to be stored in one place, then referenced in multiple other places. <br>
+                                An additional benefit is semantic identifiers. For example, --main-text-color is easier to understand than #00ff00, especially if this same color is also used in other contexts.
+                            </b>
+                        </p>
+
+                        <p>
+                            Custom properties in CSS are used for for tokenising your 
+                            CSS, but also for abstracting complexity and interactivity into smaller, 
+                            easier to manage pieces.
+                            <b>Note: Variables do not work inside media queries and container queries.</b>
+                            When CSS variables are set externally (e.g., through HTML or JavaScript), use them for pure data, 
+                            not CSS values like lengths or percentages.
+                        </p>
+
+                        <h4>Variable Declaration and Use</h4>
+                        <p>
+                            Declaring a custom property is done using a custom property name that begins with a
+                             double hyphen (--), and a property value that can be any valid CSS value. <br>
+                             element { --main-bg-color: brown; } <br>
+                             <b>
+                                A common best practice is to define custom properties on the :root pseudo-class, 
+                                so that it can be applied globally across your HTML document: <br>
+                                :root { --main-bg-color: brown; }
+                             </b>
+                             <b>
+                                Custom property names are case sensitive — --my-color will be treated as a separate custom property to --My-color.
+                             </b>
+                        </p>
+
+                        <p>
+                            you use the custom property value by specifying your custom property name inside the 
+                            var() function, in place of a regular property value: <br>
+                            element { background-color: var(--main-bg-color); }
+                        </p>
+
+                        <h4>You can set custom properties with JS</h4>
+                        <p>
+                            This ability to contextually override a custom property makes them 
+                            incredibly useful for interactive states and generally writing less 
+                            CSS.
+                        </p>
+
+                        <pre>
+                        const article = document.querySelector('article');
+                        const button = document.querySelector('button');
+
+                        button.addEventListener('click', (evt) => {
+                            article.style.setProperty('--text-color', 'tomato');
+                        });
+
+                        OR
+
+                        // get variable from inline style
+                        element.style.getPropertyValue("--my-var");
+
+                        // get variable from wherever
+                        getComputedStyle(element).getPropertyValue("--my-var");
+
+                        // set variable on inline style
+                        element.style.setProperty("--my-var", jsVar + 4);
+
+                        </pre>
+                    </article>
+
+                     <article>
+                        <h3>CSS Comparison Functions: min(), max(), and clamp()</h3>
+                        <p>
+                            CSS Comparison Functions are about comparing multiple values and representing one of them
+                             based on the function used. In min() and ma() functions, the position where
+                              min or max value is placed does not matter, the min or max value will be selected according
+                              to the function used, min() or max().
+                        </p>
+
+                        <h4>The min() Function</h4>
+                        <p>
+                            The min() function contains one or more comma-separated calculations and represents the smallest 
+                            value of them. We use the min() to set a maximum value. Example <br>
+                            .element { width: min(50%, 500px); }
+                        </p>
+
+                        <h4>The max() Function</h4>
+                        <p>
+                            The max() function contains one or more comma-separated calculations and represents the largest
+                             value of them. We use the max() to set a minimum value.
+                        </p>
+
+                        <h4>The Clamp() Function</h4>
+                        <p>
+                            What clamp() do is that it clamps a value between two defined values, 
+                            minimum and maximum. It takes three parameters (min value, preferred value, max value).
+                            Example <br>
+                            .element { width: clamp(200px, 50%, 1000px); }
+                        </p>
+
+                    </article>
+                    
+                </section>
+                    
+                    <p><a href=""> </a></p>
+                    <p><a href=""></a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN, A user's guide to CSS variables, ishadeed.com</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

@@ -137,4 +137,8 @@ footer p {
     margin: 10px;
 }
 
+pre {
+    display: none;
+}
+
 /*----------- END OF WEEKLY EXAMPLE APPLICATION PAGE --------------*/

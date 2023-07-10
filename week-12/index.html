@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-12 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 11 Notes: Tech Module: CSS Architecture and Component Based Design</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://cssguidelin.es/" target="_blank">CSS guidelines website - All guidelines/rules</a></li>
+                    <li><a href="https://philipwalton.com/articles/css-architecture/" target="_blank">CSS Architecture</a></li>
+                    <li><a href="https://getbem.com/introduction/" target="_blank">Understanding BEM Class Naming Technique</a></li>
+                    <li><a href="./BEM-button-class-naming-and-styling-example/index.html" target="_blank">BEM in simple terms</a></li>
+                    <li><a href="./shopping-cart-component-using-BEM/index.html" target="_blank">Shopping Cart using BEM Naming Convention</a></li>
+                    <li><a href="./simple-component-class-activity/index.html" target="_blank">Simple Component using BEM Naming Convention</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS Architecture and Component Based Design</h2>
+
+                    <article>
+                       <h3>CSS Guidelines</h3>
+                       <p>
+                        CSS Guidelines(Document) helps i.keep stylesheets maintainable
+                        ii.keep code transparent, sane, and readable
+                        iii.keep stylesheets scalable.
+                       </p>
+
+                       <p>
+                        A coding styleguide (note, not a visual styleguide) is a valuable tool for teams who:<br>
+                        i. build and maintain products for a reasonable length of time <br>
+                        ii.have developers of differing abilities and specialisms <br>
+                        iii.have a number of different developers working on a product at any given time <br>
+                        on-board new staff regularly <br>
+                        iv.have a number of codebases that developers dip in and out of.
+                       </p>
+
+                       <p>
+                         A coding team should have a coding style-guide (tool) which can help the team
+                         and when well followed can bring the following benefits <br>
+                         <b>
+                            i.set the standard for code quality across a codebase <br>
+                            ii.promote consistency across codebases <br>
+                            iii.give developers a feeling of familiarity across codebases <br>
+                            iv.increase productivity.
+                         </b> <br>
+                          Styleguides should be learned, understood, and implemented at all times on a project which is governed by one, and any deviation must be fully justified.
+                       </p>
+
+                        <h3>Common Style Guidelines</h3>
+                        <h4>1.Syntax and Formatting</h4>
+                        <ol>
+                            <li>two (2) space indents, no tabs</li>
+                            <li>80 character wide columns</li>
+                            <li>multi-line CSS</li>
+                            <li>meaningful use of whitespace</li>
+                        </ol>
+
+                        <h4>2.Multiple Files</h4>
+                        <p>
+                            Even if not using a preprocessor, it is a good idea to split discrete chunks of code
+                            into their own files, which are concatenated during a build step.
+                        </p>
+                        
+                        <h4>3.Table of Contents</h4>
+                        <p>
+                            An up-to-date table of contents provides a team with a single, canonical catalogue
+                            of what is in a CSS project, what it does, and in what order. <br>
+                            A simple table of contents will—in order, naturally—simply provide the name of the 
+                            section and a brief summary of what it is and does.
+                            It provides developers with a project-wide view of what is being used where, and why. <br>
+                            for example:
+                        </p>
+                        
+                        <pre>
+                /**
+                * CONTENTS
+                *
+                * SETTINGS
+                * Global...............Globally-available variables and config.
+                *
+                * TOOLS
+                * Mixins...............Useful mixins.
+                *
+                * GENERIC
+                * Normalize.css........A level playing field.
+                * Box-sizing...........Better default `box-sizing`.
+                *
+                * BASE
+                * Headings.............H1–H6 styles.
+                *
+                * OBJECTS
+                * Wrappers.............Wrapping and constraining elements.
+                *
+                * COMPONENTS
+                * Page-head............The main page header.
+                * Page-foot............The main page footer.
+                * Buttons..............Button elements.
+                *
+                * TRUMPS
+                * Text.................Text helpers.
+                */
+                        </pre>
+
+                        <h4>4.80 Characters Wide</h4>
+                        <p>
+                            Where possible, limit CSS files’ width to 80 characters. Reasons for this include <br>
+                            i.the ability to have multiple files open side by side;
+                            ii.viewing CSS on sites like GitHub, or in terminal windows;
+                            iii.providing a comfortable line length for comments. <br>
+                            There will be unavoidable exceptions to this rule—such as URLs, or gradient syntax—which shouldn’t be worried about.
+                        </p>
+
+                        <pre>
+    /**
+    * I am a long-form comment. I describe, in detail, the CSS that follows. I am
+    * such a long comment that I easily break the 80 character limit, so I am
+    * broken across several lines.
+    */
+                        </pre>
+
+                        <h4>5.Titling</h4>
+                        <p>
+                            Begin every new major section of a CSS project with a title:
+                        </p>
+
+                        <p>
+                            If you are working on a project where each section is its own file, this title 
+                            should appear at the top of each one. If you are working on a project with multiple 
+                            sections per file, each title should be preceded by five (5) carriage returns. 
+                            This extra whitespace coupled with a title makes new sections much easier to spot 
+                            when scrolling through large files:
+                        </p>
+
+                        <pre>
+                /*------------------------------------*\
+                #SECTION-TITLE
+                \*------------------------------------*/
+
+                .selector { }
+                        </pre>
+
+                        <h4>6.Anatomy of a Ruleset</h4>
+
+                        <pre>
+                            .foo, .foo--bar,
+                            .baz {
+                            display: block;
+                            background-color: green;
+                            color: red;
+                            }
+                        </pre>
+
+                        <h4>7.Multi-line CSS</h4>
+                        <p>
+                            CSS should be written across multiple lines, except in very specific circumstances. 
+                            There are a number of benefits to this: <br>
+                            A reduced chance of merge conflicts, because each piece of functionality exists on its own line.
+                            More ‘truthful’ and reliable diffs, because one line only ever carries one change.
+                        </p>
+
+                        <h4>8.Indenting</h4>
+                        <p>
+                            As well as indenting individual declarations, indent entire related rule-sets to 
+                            signal their relation to one another, for example:
+                        </p>
+
+                        <p>
+                            By doing this, a developer can see at a glance that .foo__baz {} lives inside 
+                            .foo__bar {} lives inside .foo {}. <br>
+                            This quasi-replication of the DOM tells developers a lot about where classes are 
+                            expected to be used without them having to refer to a snippet of HTML.
+                        </p>
+
+                        <pre>
+                            .foo { }
+
+                                .foo__bar { }
+
+                                    .foo__baz { }
+                        </pre>
+
+                        <h4>9.Indenting Sass</h4>
+                        <p>
+                            When indenting Sass, we stick to the same two (2) spaces, and we also leave a blank line before and after the nested ruleset.
+                        </p>
+
+                        <h4>10.Alignment</h4>
+                        <p>
+                            Attempt to align common and related identical strings in declarations, for example:
+                        </p>
+
+                        <pre>
+                .foo {
+                    -webkit-border-radius: 3px;
+                       -moz-border-radius: 3px;
+                            border-radius: 3px;
+                }
+
+                .bar {
+                    position: absolute;
+                    top:    0;
+                    right:  0;
+                    bottom: 0;
+                    left:   0;
+                    margin-right: -10px;
+                    margin-left:  -10px;
+                    padding-right: 10px;
+                    padding-left:  10px;
+                }
+                        </pre>
+
+                        <h4>11.Meaningful Whitespace</h4>
+                        <p>
+                            One (1) empty line between closely related rulesets. <br>
+                            Two (2) empty lines between loosely related rulesets. <br>
+                            Five (5) empty lines between entirely new sections.
+                        </p>
+
+                        <h4>12.Commenting</h4>
+                        <p>
+                            As a result of CSS not telling its own story very well, it is a language that really 
+                            does benefit from being heavily commented.
+                        </p>
+
+                        <p>
+                            As a rule, you should comment anything that isn’t immediately obvious from the code 
+                            alone. <br> That is to say, there is no need to tell someone that color: red; will 
+                            make something red, but if you’re using overflow: hidden; to clear floats—as 
+                            opposed to clipping an element’s overflow—this is probably something worth 
+                            documenting.
+                        </p>
+
+                        <p>
+                            For large comments that document entire sections or components, we use a DocBlock-esque
+                             multi-line comment which adheres to our 80 column width.
+                        </p>
+
+                        <p>
+                            It should go without saying that no comments should make their way into production environments—all CSS should be minified, resulting in loss of comments, before being deployed.
+                        </p>
+
+                        <h4>Preprocessor Comments</h4>
+                        <p>
+                            If you are documenting code which will get compiled, use comments that will compile also. 
+                        </p>
+
+                        <h4>13.Naming Conventions</h4>
+                        <ol>
+                            <li>All strings in classes are delimited with a hyphen (-) such as .page-head { }</li>
+                            <li>Camel case and underscores are not used for regular classes; the following are incorrect</li>
+                            <li>For larger, more interrelated pieces of UI that require a number of classes, we use a BEM-like naming convention</li>
+                            <li>BEM, meaning Block, Element, Modifier, is a front-end methodology coined by developers working at Yandex. </li>
+                            <li>
+                                BEM splits components’ classes into three groups:
+                                i.Block: The sole root of the component.
+                                ii.Element: A component part of the Block.
+                                iii.Modifier: A variant or extension of the Block.
+                                Elements are delimited with two (2) underscores (__), and Modifiers are delimited by two (2) hyphens (--).
+                                Here we can see that .person {} is the Block; it is the sole root of a discrete entity. <br>
+                                .person__head {} is an Element; it is a smaller part of the .person {} Block. <br>
+                                Finally, .person--tall {} is a Modifier; it is a specific variant of the .person {} Block.
+                            </li>
+                        </ol>
+
+                        <h4>Blocks, Elements and Modifiers(BEM) Class Naming Technique</h4>
+                        <ol>
+                            <li>
+                                Block: Standalone entity that is meaningful on its own / A component part of the Block.
+                                Examples
+                                header, container, menu, checkbox, input
+                            </li>
+
+                            <li>
+                                Element: A component part of the Block / A part of a block that has no standalone meaning and is semantically tied to its block.
+                                Examples
+                                menu item, list item, checkbox caption, header title
+                            </li>
+
+                            <li>
+                                Modifier: A flag on a block or element / A variant or extension of the Block. Use them to change appearance or behavior.
+                                Examples
+                                disabled, highlighted, checked, fixed, size big, color yellow
+                            </li>
+                        </ol>
+
+                        <h4>Benefits of Using BEM</h4>
+                        <ol>
+                            <li>
+                                Modularity: 
+                                Block styles are never dependent on other elements on a page, so you will never experience problems from cascading.
+                                You also get the ability to transfer blocks from your finished projects to new ones.
+                            </li>
+
+                            <li>
+                                Reusability:
+                                Composing independent blocks in different ways, and reusing them intelligently, reduces the amount of CSS code that you will have to maintain.
+                                With a set of style guidelines in place, you can build a library of blocks, making your CSS super effective.
+                            </li>
+
+                            <li>
+                                It makes it clear in the HTML what content is contained in each element
+                            </li>
+
+                            <li>
+                                Structure:
+                                BEM methodology gives your CSS code a solid structure that remains simple and easy to understand.
+                            </li>
+                        </ol>
+
+                        <p>
+                            <b>
+                                NOTE ON BEM CONVENTION:
+                                BEM specifies that we should not use element selectors in our CSS. 
+                                The only way to avoid that is to use lots of classes.
+                            </b>
+                        </p>
+                        
+                        <p><b>JavaScript Hooks</b>
+                            As a rule, it is unwise to bind your CSS and your JS onto the same class in your HTML. 
+                            It is much cleaner, much more transparent, and much more maintainable to bind your JS onto specific classes.
+                            <b>Typically, these are classes that are prepended with js- such as js-btn</b>
+                        </p>
+
+
+                        <h4>14.CSS Selectors</h4>
+                        <p>
+                            It is important when writing CSS that we scope our selectors correctly, and that 
+                            we’re selecting the right things for the right reasons. <br>
+                            Selector Intent is the process of deciding and defining what you want to style and how 
+                            you will go about selecting it. For example, if you are wanting to style your 
+                            website’s main navigation menu, using header ul { } is unwise while .site-nav { } is a better approach.
+                        </p>
+
+                        <p>
+                            header ul {} select has intent to style any ul inside any header element, whereas our 
+                            intent was to style the site’s main navigation. This is poor Selector Intent: you can
+                             have any number of header elements on a page, and they in turn can house any number
+                              of uls, so a selector like this runs the risk of applying very specific styling to 
+                              a very wide number of elements.This will result in having to write more CSS to undo the greedy nature of such a selector.
+                        </p>
+                        <ol>
+                            <li>Your selectors should be as explicit and well reasoned as your reason for wanting to select something.</li>
+                            <li>Keep selectors as short as possible, in order to keep specificity down and performance up.</li>
+                            <li>Everything you choose, from the type of selector to its name, should lend itself toward being reused.</li>
+                            <li>
+                                Style things based on where they are, but on what they are.Components’ styling should
+                                 not be reliant upon where we place them—they should remain entirely location 
+                                 independent <br>
+                                 <b>A component shouldn’t have to live in a certain place to look a certain way.</b>
+                            </li>
+                            <li>Qualified selectors such as input.btn { } do not lend themselves well to being reused, and every selector we write should be authored with reuse in mind.</li>
+                            <li>Using a class name to describe content is redundant because content describes itself.</li>
+                            <li>Choose names based on ease of maintenance, not for their perceived meaning.It is better to strive for reusable, recyclable classes rather than writing for specific use cases.</li>
+                            <li>Generally speaking, the longer a selector is (i.e. the more component parts) the slower it is</li>
+                            <li>Because browsers read selectors right-to-left, the rightmost selector is often critical in defining a selector’s performance: this is called the key selector.</li>
+                            <li>Do not nest selectors unnecessarily, because this will increase specificity and affect where else you can use your styles.</li>
+                            <li>Do not qualify selectors unnecessarily, as this will impact the number of different elements you can apply styles to.</li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+
+                        <p>
+                            <b>NOTE ON NAMING SELECTORS</b> <br>
+                            For example, instead of a class like .site-nav, choose something like .primary-nav; 
+                            rather than .footer-links, favour a class like .sub-links. <br>
+                            The differences in these names is that the first of each two examples is tied to a 
+                            very specific use case: they can only be used as the site’s navigation or the 
+                            footer’s links respectively. <br> 
+                            By using slightly more ambiguous names, we can increase our ability to reuse these
+                            components in different circumstances. <br>
+                            Tying your class name semantics tightly to the nature of the content has already 
+                            reduced the ability of your architecture to scale or be easily put to use by other
+                             developers - Nicolas Gallagher
+                        </p>
+
+                        <h3>CSS Architecture</h3>
+                        <p>
+                            Writing CSS code that works according to specification is good, but the code should be checked 
+                            for other things such as <br>
+                            <b>
+                                Is the code readable? Is it easy to change or extend? Is it decoupled from other 
+                                parts of the application? Will it scale?
+                            </b>
+                        </p>
+
+                        <h4>The Goals of Good CSS Architecture</h4>
+                        <p>CSS needs to be predictable, reusable, maintainable, and scalable</p>
+
+                        <ol>
+                            <li>
+                                <b>Predictable: Predictable CSS means your rules behave as you’d expect.</b>
+                                When you add or update a rule, it shouldn’t affect parts of your site that you 
+                                didn’t intend. On small sites that rarely change, this isn’t as important, but
+                                on large sites with tens or hundreds of pages, predictable CSS is a must.
+                            </li>
+
+                            <li><b>Resuable</b>CSS rules should be abstract and decoupled enough that you can build new components quickly from existing parts without having to recode patterns and problems you’ve already solved.</li>
+                            
+                            <li>
+                                <b>Maintainable</b>
+                                When new components and features need to be added, updated or rearranged on your site, doing so shouldn’t require refactoring existing CSS. Adding component X to the page shouldn’t break component Y by its mere presence.
+                            </li>
+
+                            <li>
+                                <b>Scalable</b>
+                                As your site grows in size and complexity it usually requires more developers to maintain. Scalable CSS means it can be easily managed by a single person or a large engineering team. It also means your site’s CSS architecture is easily approachable without requiring an enormous learning curve. Just because you’re the only developer touching the CSS today doesn’t mean that will always be the case.
+                            </li>
+                        </ol>
+
+
+                        <h4>Practices to avoid</h4>
+                        <ol>
+                            <li>Overly Complicated Selectors: Avoid complicated selectors and element selectors in a style as change of elements in html will break the entire CSS rule</li>
+                            <li></li>
+                        </ol>
+
+                        <h4>CSS Good architecture practices</h4>
+                        <ol>
+                            <li><b>Be intentional</b>
+                            Applying classes directly to the elements you want to style is the best way to keep your CSS predictable. <br>
+                            use .subnav instead of #main-nav ul li ul li div
+                            </li>
+
+                            <li>
+                                <b>Separate your concerns</b>
+                                Components should know how to style themselves and do that job well, but they should not be responsible for their layout or positioning nor should they make too many assumptions about how they’ll be spaced in relation to surrounding elements.
+                                <b>In general, components should define how they look, but not their layout or position. </b>
+                                Be careful when you see properties like background, color, and font in the same rule as position, width, height, and margin.
+                                Layout and position should be handled by either a separate layout class or a separate container element.
+                            </li>
+
+                            <li>
+                                <b>Namespace your classes</b>
+                                A much better approach is applying namespaces to the classes themselves. If an 
+                                element is a member of a visual component, every one of its sub-element classes 
+                                should use the component's base class name as a namespace.
+                                <b>Use .widget { -parentClass- } .widget-title { -subClass- } in place of .widget { -parentClass- } .widget .title { -subClass- }</b> <br>
+                                Doing this reduces High risk of style cross-contamination(other class names affecting styles of a separate component due to class name clutches) <br>
+                                <b>
+                                    Namespacing your classes keeps your components self-contained and modular. It minimizes the likelihood that an existing class will conflict, and it lowers the specificity required to style child elements.
+                                </b>
+                            </li>
+
+                            <li>
+                                <b>Extend components with modifier classes</b>
+                                When an existing component needs to look slightly different in a certain context, create a modifier class to extend it. <br>
+                                Write .widget { } .widget-sidebar { } in place of .widget { } #sidebar .widget { } <br>
+                                <b>Use modifier class to extend a components styles and not using parent elements to style the changes</b>
+                            </li>
+
+                            <li>
+                                <b>Organize Your CSS Into a Logical Structure</b>
+                                <b>
+                                    Its good practice to organize CSS in four categories: base, layout, modules, and state. -Jonathan Snook. <br>
+                                     Base consists of reset rules and element defaults. Layout is for positioning of site-wide elements as well as generic layout helpers like grid systems. Modules are reusable visual elements, and state refers to styling that can be toggled on or off via JavaScript.
+                                </b>
+                            </li>
+
+                            <li>
+                                <b>Use Classes For Styling And Styling Only</b>
+                                When you see a class in the HTML, you should be able to tell instantly what its 
+                                purpose is. My recommendation is to give all non-styled classes a prefix. <br>
+                                I use .js- for JavaScript and I use .supports- for Modernizr classes. All classes 
+                                without a prefix are for styling and styling only.
+                            </li>
+
+                            <li>
+                                <b>Name your classes with a logical structure</b>
+                                A structured naming convention allows you to look at a class name and know exactly 
+                                what its relationship is to other classes and where it should appear in the HTML 
+                                — making naming easier and testing possible where it previously was not.
+                            </li>
+
+                            <li>
+                                <b>Tools</b> Use tools and packages to help implement CSS rules established for the dev team early in the start of the project
+                            </li>
+
+                            <li>
+                                <b>Preprocessors</b>
+                                <b>Preprocessors help you write CSS faster, not better.</b> Ultimately it gets 
+                                turned into plain CSS, and the same rules should apply. If a preprocessor lets you 
+                                write your CSS faster then it also lets you write bad CSS faster, so it's important 
+                                to understand good CSS architecture before thinking a preprocessor will solve your
+                                problems. <br>
+                            </li>
+
+                            <li>
+                                <b>CSS Lint</b>
+                                A tool like CSS Lint is essential for any large team to ensure at least a baseline of consistency and convention compliance. And like I hinted at previously, one of the great reasons for conventions is they allow for tools like CSS Lint to easily identify anything that breaks them.
+                            </li>
+                        </ol>
+
+                        <h4>Other Good CSS rules - may put in CSS lint</h4>
+                        <ol>
+                            <li>Don’t allow IDs in your selectors</li>
+                            <li>Don’t use non-semantic type selectors (e.g. DIV, SPAN) in any multi-part rule.</li>
+                            <li>Plain old DIV or SPAN elements, without classes attached</li>
+                            <li>Don’t use more than 2 combinators in a selector.</li>
+                            <li>Don’t allow any class names that begin with “js-”</li>
+                            <li>Warn if frequently using layout and positioning for non “l-” prefixed rules</li>
+                            <li>Warn if a class defined by itself is later redefined as a child of something else.</li>
+                        </ol>
+
+                        <h4>Naming Classes with a logical structure showing class relationship is to other classes and where it should appear in the HTML </h4>
+                        <pre>
+                # Templates Rules (using Sass placeholders)
+                %template-name { }
+                %template-name--modifier-name { }
+                %template-name__sub-object { }
+                %template-name__sub-object--modifier-name { }
+
+                # Component Rules
+                .component-name { }
+                .component-name--modifier-name { }
+                .component-name__sub-object { }
+                .component-name__sub-object--modifier-name { }
+
+                # Layout Rules
+                .l-layout-method { }
+                .grid { }
+
+                # State Rules
+                .is-state-type { }
+
+                # Non-styled JavaScript Hooks
+                .js-action-name { }
+                        </pre>
+
+                        <h4>Rules to Follow When Working with Preprocessors</h4>
+                        <ol>
+                            <li>Never nest rules purely for code organization. Only nest when the outputted CSS is what you want.</li>
+                            <li>Never use a mixin if you’re not passing an argument. Mixins without arguments are much better used as templates which can be extended.</li>
+                            <li>Never use @extend on a selector that isn’t a single class. It doesn’t make sense from a design perspective and it bloats the compiled CSS.</li>
+                            <li>Never use @extend for UI components in component modifier rules because you lose the inheritance chain</li>
+                            <li>The best parts of preprocessors are functions like @extend and %placeholder. Both allow you to easily manage CSS abstraction without adding bloat to your CSS or a huge list of base classes in your HTML that can be very hard to manage.</li>
+                            <li>@extend should be used with care though because sometime you want those classes in your HTML. For example, when you first learn about @extend it might be tempting to use it with all of your modifier classes.
+                                The problem with doing this is you lose the inheritance chain in the HTML. Now it’s very difficult to select all button instances with JavaScript.
+                            </li>
+                        </ol>
+                        
+
+
+
+
+                        
+
+
+
+                    </article>
+
+                    
+                </section>
+                
+                <footer>
+                    <p><b>NOTE:</b> Resources used include: CSS Architecture, cssguidelin.es</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

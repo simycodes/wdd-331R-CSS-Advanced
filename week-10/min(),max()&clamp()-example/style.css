@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+/* DECLARING A CSS VARIABLE */
+:root {
+  --clr-primary: #EE6352;
+  --clr-body: #333;
+  --clr-bg: #DDD;
+  --primary: goldenrod;
+}
+
+body {
+    /* background: linear-gradient(to left, #3b8d99, #6b6b83, #aa4b6b);  */
+    font-family: 'Courier New', Courier, monospace;
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.125em;
+    line-height: 1.6;
+    color: var(--clr-body);
+    background: var(--clr-bg);
+}
+
+h1 {
+    color: var(--clr-primary);
+}
+
+.content {
+   background: white;
+   padding: 3em;
+   box-shadow: 0 0 3em rgba(0,0,0,.15);
+
+   width: min(500px, 70%); 
+   /* choses the minimum of the two depending on the window viewpoint 
+   Above code equivalent to below code*/
+   /* width: 70%;
+   max-width: 500px; */
+}
+
+.title {
+    
+    margin: 0 0 .5em;
+    font-weight: 900;
+    color: var(--clr-primary);
+    line-height: .8;
+}
+
+div p {
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+}
+
+
+.content-1 {
+   background: white;
+   padding: 3em;
+   box-shadow: 0 0 3em rgba(0,0,0,.15);
+   width: max(500px, 70%);
+   margin-top: 10px;
+}
+

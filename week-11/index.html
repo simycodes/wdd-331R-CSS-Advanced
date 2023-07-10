@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-1 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 11 Notes: Debugging and Optimization</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://www.sitepoint.com/premium/books/jump-start-web-performance/read/2/k666w0dl/" target="_blank">Jump Start Web Performance</a></li>
+                    <li><a href="https://developer.chrome.com/docs/devtools/" target="_blank">Google Dev Tools</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Performance">Web Performance</a></li>
+                    <li><a href="https://web.dev/measure/">Light House Website</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>Debugging and Optimization</h2>
+
+                    <article>
+                        <h3>Debugging</h3>
+                        <p>
+                            On your road to becoming a CSS master, you’ll need to know how to troubleshoot and 
+                            optimize your CSS. <br>
+                            <b>
+                            How do you diagnose and fix rendering problems? <br>
+                            How do you ensure that your CSS creates no performance lags for end users? <br>
+                            It’s also important to ensure code quality. Were you a little too verbose with
+                            your comments? <br>
+                            Are there too many unused selectors? <br>
+                            Are your selectors overly specific in a way that could affect performance? <br>
+                            </b>
+                            Hence its vital to know browser and command-line tools to help you analyze and troubleshoot your CSS.
+                            Knowing which tools to use will help you ensure that your front end works well.
+                        </p>
+
+                        <h4>Browser-based Developer Tools</h4>
+                        <p>
+                            Most desktop browsers include an element inspector feature that you can use to 
+                            troubleshoot your CSS. Start using this feature by right-clicking anywhere in the 
+                            browser viewport and selecting Inspect or Inspect Element from the menu.
+                        </p>
+
+                        <p>
+                            The markup you’ll see in the HTML panel is a representation of the DOM. 
+                            It’s generated when the browser finishes parsing the document and may differ 
+                            from your original markup. Using View Source reveals the original markup. Keep 
+                            in mind that, for some JavaScript applications, there may not be much markup to 
+                            view. <br>
+                            Authored style rules precede user agent styles. User agent styles are the browser’s 
+                            default styles. They also have an impact on your site’s look and feel. <br>
+                            As you inspect styles, you may notice that some properties appear crossed out. 
+                            These properties have been overridden either by a cascading rule, a conflicting 
+                            rule, or a more specific selector, as depicted below. <br>
+                            Invalid or unsupported CSS declarations both have a line through them and an adjacent warning icon, which can be seen below.
+                        </p>
+
+                        <h4>Reflows and Repaints</h4>
+                        <p>
+                            A reflow is any operation that changes the layout of part or all of a page. 
+                            Examples include changing the dimensions of an element or updating its left position. 
+                            They’re expensive, because they force the browser to recalculate the height, width, 
+                            and position of elements in the document.
+                        </p>
+                        <p>
+                            Repaints also force the browser to re-render part of the document. Changing the 
+                            color of a button when in a :hover state is one example of a repaint. They’re a bit
+                            less troublesome than reflows, however, because they don’t affect the dimensions
+                            or positions of nodes.
+                        </p>
+                        <p>
+                            Reflows and repaints are most often triggered by DOM operations—such as adding or 
+                            removing elements. Changing the values of properties that affect the dimensions, 
+                            visibility, or position of an element can also trigger reflows and repaints.
+                        </p>
+
+                        <p>
+                            <b>
+                                Page loads always trigger reflow and repaint operations as the browser parses the initial HTML, CSS, and JavaScript.
+                            </b>
+                            It’s difficult to completely banish repaints and reflows from a project.
+                             We can, however, identify them and reduce their impact using performance tools.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h4>Performance Tools</h4>
+                        <p>
+                            <b>
+                            Performance tools measure how well your front end behaves, capturing things like
+                            frame rate and asset load times.</b> By recording page activity, we can determine
+                            which portions of our CSS may be causing performance bottlenecks.
+                        </p>
+
+                        <p>
+                            In Microsoft Edge, Chrome and Firefox, you’ll use the appropriately named Performance panel.
+                            Safari calls it Timelines. <br>
+                            There are two ways to trigger the profiling tool:
+                            i.manually by pressing the Record or start button <br>
+                            ii.programmatically using console.profile( profileName ), where profileName is the optional name for the profile.
+                            To stop recording, press the stop button, or use console.profileEnd( profileName ). <br>
+                            NOTE: Both console.profile() and console.profileEnd() are experimental and non-standard. Don’t use them in production!
+                        </p>
+
+                        <p>
+                            NOTE: In performance panel, the uppermost row of red markings indicates dropped frames.
+                            Dropped frames can cause what experts call jank, or animations that aren’t as smooth as they can be. 
+                        </p>
+
+                        <h4>Performance: Identifying Which Lines to Remove</h4>
+                        <p>
+                            Properties that affect the size, geometry, or placement of objects can trigger 
+                            reflow operations. This includes positional properties like left, top, right, and
+                            bottom, alignment-related properties, and display. <br>
+                            Once you know which properties could cause trouble, the next step is to test the
+                            hypothesis. Disable the property—either with a comment, or by adding a temporary x- 
+                            prefix—and rerun the performance test <br>
+                            Remember that performance is relative, not absolute or perfect. The goal is 
+                            improvement: make it perform better than it did before. If a property or effect is 
+                            unacceptably slow, eliminate it altogether.
+                        </p>
+
+                        <h4>Minification with CSS Optimizer</h4>
+                        <p>
+                            Minification in the context of CSS means “removing excess characters”. <br>
+                            Fewer bytes, of course, means faster download times and data transfer savings for you and your users. <br>
+                            CSSO is an example of a package that minifies CSS. <br>
+                            Preprocessors and post-processors (such as Sass, Less and PostCSS) offer minification as
+                            part of their toolset. However, using CSSO may shave additional bytes from your files.
+                        </p>
+
+                        <h4>Enforcing Code Quality with stylelint</h4>
+                        <p>
+                            <b>
+                                stylelint is a linting tool. A linter is an application that checks code for 
+                                potential trouble spots, and enforces coding conventions according to a set of rules.
+                            </b>
+                            You can, for instance, <b>use linters to enforce tabs instead of spaces for indentation.
+                            stylelint can find problems such as duplicate selectors, invalid rules, or 
+                            unnecessary specificity.</b> These have the greatest impact on CSS maintainability.
+                        </p>
+
+                    </article>
+                    
+                    <article>
+                        <h3>Web Performance</h3>
+                        <p>
+                            i.Removing unused or unnecessary images, videos, fonts, CSS, and JavaScript will  
+                            simplify your site. It should result in fewer complications and less maintenance.<br>
+                            ii.Good performance website benefits: <br> <b> less code is required, 
+                            users receive a slicker experience,
+                            search engine rankings improve,
+                            conversions increase,
+                            hosting costs decrease </b>
+                        </p>
+
+                        <h4>Web Performance Testing Tools</h4>
+                        <p>
+                            These are a list of testing tools to help you understand web issues using real data, showing how: <br>
+                            i. largest assets can be discovered <br>
+                            ii.the slowest network responses can be identified <br>
+                            iii.the reasons for poor browser performance can be diagnosed
+                        </p>
+
+                        <p>
+                            <b>
+                              You should test your websites and applications for defects, ease of use, 
+                              accessibility, quality assurance, and other factors.
+                            </b>
+                             Evaluating performance is no
+                             different, and it’s best to follow a plan that lays out:
+                            who’s responsible for running tests,
+                            what tools and settings will be used for each test,
+                            how results will be recorded and fed back into the development process
+                        </p>
+
+                        <h4>Identify Performance Bottlenecks</h4>
+                        <p>
+                            <b>
+                                Knowing you have a performance problem is one thing. Finding and fixing the 
+                                causes is another matter.
+                                The first step is to identify whether the fault occurs server-side or client-side.
+                            </b>
+                            A slow network response, either on the initial page load or during an Ajax request, 
+                            will normally indicate a server issue. Database queries are often the culprit, 
+                            but you’ll need to prove that! Existing tools and logs can help, but it may be 
+                            necessary to output diagnostic information to a file in a similar way to other 
+                            debugging activities. <br> <br>
+                            Client-side issues can be diagnosed using browser developer tools.
+                            <b>
+                                Performance is affected when the browser has considerable work to do—such as a 
+                                long-running JavaScript function, a DOM update that causes the page to re-layout,
+                                or CSS changes that affect many elements.
+                            </b>
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Performance Tool Concepts</h3>
+                        <h4>The Browser Rendering Process - What happens when user access a website or app</h4>
+                        <ol>
+                            <li>
+                                The browser makes an HTTP request for a specific URL. Under the hood, several network processes are taking place to resolve the domain name to an IP address and route the request to a server.
+                            </li>
+                            <li>
+                                The server receives and parses the request. It will reference a specific URL and may have data appended as a query string, in the HTTP header, or message body. It returns a response which, in this case, we’ll presume is HTML content
+                            </li>
+                            <li>
+                                The browser starts to receive HTML data, which it parses. The document may reference further assets, such as images, fonts, style sheets, and JavaScript, which trigger additional HTTP requests to the same or another server.
+                            </li>
+                            <li>
+                                Eventually, the browser has enough information to start the rendering process. Behind the scenes, it has started to build the HTML DOM (document object model) which defines the page in a hierarchical tree structure. Style calculations also determine which CSS rules apply to each DOM node, and a CSSOM (CSS object model) is created for JavaScript interaction.
+                            </li>
+                            <li>
+                                The browser initiates the layout (or reflow) phase. This calculates the dimensions of each element and how it affects the size or positioning of elements around it.
+                            </li>
+                            <li>
+                                The layout is followed by a paint phase. This draws the visual parts of each element onto separate layers—that is, text, colors, images, borders, shadows, and so on.
+                            </li>
+                            <li>
+                                Finally, a composite phase draws each layer to the screen in the correct order.
+                            </li>
+                        </ol>
+
+                        <p>
+                            The page is now in an initial viewable state. During or after the render, JavaScript can run to make further HTTP requests (Ajax or WebSocket calls), perform calculations, update the DOM, or apply CSS rules. This could trigger further layout, paint, and/or composite phases.
+                        </p>
+
+                        <p>
+                            <b>Most tools make reference to these phases</b>, while also introducing their own metrics 
+                            that often combine two or more stages. 
+                            <b>
+                            In essence, the fewer steps you require, the better the performance. 
+                            Taking steps to minimize HTTP requests and reduce browser processing will result in
+                            a snappier user experience.
+                            </b>
+                        </p>
+
+                        <h4>1.Google Lighthouse/Chrome Audits</h4>
+                        <p>
+                            <b>Lighthouse is an open-source tool that helps evaluate the performance and quality of your page or app.</b>
+                             You can access it in the following ways:
+                            from within Chrome’s DevTools <br>
+                            as the online web.dev or PageSpeed Insights tools <br>
+                            as a Node.js module, through which command-line and automated tests can be executed
+                        </p>
+
+
+                        <h4><b>Performance Metric:   	Description</b></h4>
+                        <ol>
+                            <li>First Contentful Paint:	the time when the first text or image is painted</li>
+                            <li>First Meaningful Paint:	when the primary content is visible</li>
+                            <li>Speed Index: how quickly the contents of a page are visibly populated</li>
+                            <li>First CPU Idle:	the time when the main thread is able to handle input</li>
+                            <li>Time to Interactive: the time taken for the page to become fully interactive</li>
+                            <li>Max Potential First Input Delay: the time when the browser is able to respond to interaction</li>
+                        </ol>
+
+                        <p>
+                            The lower the figures, the better the page performance. This is followed by an 
+                            Opportunity section, which suggests potential improvements and estimated savings.
+                        </p>
+
+                        <h4>2.DevTools' Network Panel</h4>
+                        <p>
+                            The developer tools in most browsers provide a Network panel that shows a log of all
+                            network activity during page load and any subsequent file, Ajax, or WebSocket data flows.
+                        </p>
+
+                        <p>
+                            <b>
+                                In general, use the Network panel when you need to make sure that resources are 
+                                being downloaded or uploaded as expected.
+                            </b> <br>
+                            The most common use cases for the Network panel are: <br>
+                            Making sure that resources are actually being uploaded or downloaded at all.
+                            Inspecting the properties of an individual resource, such as its HTTP headers, content, size, and so on.
+                        </p>
+
+                        <p>
+                            The status bar at the bottom summarizes the number of requests, total data transfer 
+                            (possibly compressed), the total size of all uncompressed resources, the total 
+                            download time, and the time when the document DOMContentLoaded and window load 
+                            events were triggered. <br>
+                            Further options are provided at the top:
+                            Preserve log: don’t clear the log between page loads,
+                            Disable cache: load all files from the network to make a better assessment of first-time page access,
+                            Throttle network speed: select or define download speed profiles
+                        </p>
+
+                        <p>
+                            Most sites request assets from other domains, such as CDNs (content delivery networks), 
+                            fonts repositories, analytics trackers, advertising networks, social media share
+                             buttons, and so on. While useful, those resources can have a negative impact on 
+                             performance, privacy, and security. 
+                        </p>
+                    </article>
+
+                    <article>
+                        <h4>3.Chrome's Performance Monitor</h4>
+                        <p>
+                            Chrome's new Performance Monitor can be accessed from the DevTools' More tools 
+                            sub-menu (although this may vary across Chrome versions). <br>
+                            It appears in the lower Console drawer panel, and charts are updated in real 
+                            time as you use a page.
+                        </p>
+
+                        <h4><b>Performance Monitor:	Description</b></h4>
+                        <ol>
+                            <li>
+                                CPU usage	processor utilization from 0% to 100%
+                            </li>
+                            <li>
+                                JS heap size	memory required for JavaScript objects
+                            </li>
+                            <li>
+                                DOM Nodes	the number of elements in the HTML document
+                            </li>
+                            <li>
+                                JS event listeners	the number of registered JavaScript event listeners
+                            </li>
+                            <li>
+                                Documents	the number of document resources including the page, CSS, JS, etc.
+                            </li>
+                            <li>Document Frames	the number of frames, iframes, and worker scripts</li>
+                            <li>Layouts / sec	the rate at which the browser has to re-layout the DOM</li>
+                            <li>Style recalcs / sec	the rate at which the browser has to recalculate styles</li>
+                        </ol>
+
+                        <p>
+                            The Performance Monitor could be <b> used to discover unusual spikes in activity—such 
+                            as rising memory use or layout recalculations when an element has been added to 
+                            the page.</b> Further investigation can then be carried out in the Performance Panel.
+                        </p>
+
+                        <h4>4.Developer Tools' Performance Panel</h4>
+                        <p>
+                            <b>
+                                The developer tools provided in Chrome, Firefox, Safari, and Edge provide a Performance tab that allows you to record a snapshot of browser activity when particular actions are made. 
+                            </b>
+                            Unlike the Performance Monitor, you must record a profile before it can be analyzed.
+                        </p>
+
+                        <p>
+                            The report can be daunting, but it can be saved and reloaded later for further analysis.
+                            The top timeline chart shows frames per second, CPU usage, network usage, screenshots, 
+                            and the heap memory size. <br>
+                            An area can be selected with the mouse to focus on a specific point.
+                        </p>
+
+                        <p>
+                            The main results include: <br>
+                            Network: loading times for individual files,
+                            Frames: screenshots at points on the timeline,
+                            Interactions: input and animation timings,
+                            Timings: events such as DOMContentLoaded and the First Meaningful Paint,
+                            Main: thread activities such as function calls and event handlers
+                        </p>
+
+                        <p>
+                            The panel can typically be used to discover inefficient activities, including:
+                           <b>expensive event handlers, such as those attached to scroll or mouseover actions,
+                            long-running JavaScript functions,
+                            slow or badly throttled network requests,
+                            a continually rising JavaScript Heap, which could result from memory leaks or poor garbage collection,
+                            style changes that affect many DOM elements,
+                            animations that incur frequent layout changes </b> 
+                        </p>
+
+                        <p>
+                            A variety of other free tools, browser extensions, and commercial services 
+                            (often with free tiers or trials) are available, which can provide performance 
+                            monitoring, usage tracking, and improvement advice: <br>
+                            sitespeed.io, webhint, Pingdom Website Speed Test, GMetrix, Uptrends, Sentry.io
+                        </p>
+
+                    </article>
+
+                    <article>
+                        <h4>Web Performance</h4>
+                        <p>
+                            Building websites requires HTML, CSS, and JavaScript. To build websites and 
+                            applications people want to use, which attract and retain users, you need to 
+                            create a good user experience. 
+                            <b>
+                                Part of good user experience is ensuring the content is quick to load and 
+                                responsive to user interaction. This is known as web performance.
+                            </b>
+                        </p>
+
+                        <p>
+                            Perceived performance is a subjective measure of website performance, responsiveness,
+                            and reliability. In other words, how fast a website seems to the user. 
+                            It is harder to quantify and measure than the actual speed of operation. <br>
+                            The perception of how quickly (and smoothly) pages load and respond to user 
+                            interaction is even more important than the actual time required to fetch the 
+                            resources. While you may not be able to physically make your site run faster, you 
+                            may well be able to improve how fast it feels for your users <br>
+                            For example, when loading a page it is better to display the text when it arrives 
+                            rather than wait for all the images and other resources. Even though the content has 
+                            not fully downloaded the user can see something is happening and they can start
+                             interacting with the content. <br> <br>
+                             <b>
+                                Similarly, it is better to display a "loading animation" as soon as a user clicks a 
+                                link to perform a long-running operation. While this doesn't change the time taken
+                                 to complete the operation, the site feels more responsive, and the user knows that
+                                  it is working on something useful
+                             </b>
+                        </p>
+                    </article>
+                    
+                </section>
+                
+                    <p><b>NOTE:</b> Resources used include: MDN, CSS Master, JUMP START WEB PERFORMANCE, developer.chrome.com/docs/devtools/</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Blocks, Elements and Modifiers(BEM) Class Naming Techniquet</title>
+</head>
+<body>
+
+    <h1>Blocks, Elements and Modifiers(BEM) Class Naming Technique</h1>
+   
+    <!-- button IS THE BLOCK: The sole root of the component/Standalone entity that is meaningful on its own -->
+    <button class="button">
+	    Normal button
+    </button>
+
+    <!-- Element: A component part of the Block / A part of a block that has no standalone meaning and is semantically tied to its block. -->
+    <!-- Elements are delimited with two (2) underscores (__), -->
+    <button class="button button--state-success">
+        Success button
+    </button>
+
+    <!-- Modifier: A variant or extension of the Block / A flag on a block or element. Use them to change appearance or behavior. -->
+    <!-- and Modifiers are delimited by two (2) hyphens (--) -->
+    <button class="button button--state-danger">
+        Danger button
+    </button>
+
+    <br>
+    <h2>BEM</h2>
+
+    <p>
+        THE BLOCK: The sole root of the component / Standalone entity that is meaningful on its own
+    </p>
+
+    <p>
+        Element: A component part of the Block / A part of a block that has no standalone meaning 
+        and is semantically tied to its block.
+        Elements are delimited with two (2) underscores (__) . 
+        These can be placed on direct children or grand-children elements of the block
+    </p>
+
+    <p>
+        Modifier: A variant or extension of the Block / A flag on a block or element. 
+        Use them to change appearance or behavior.
+        and Modifiers are delimited by two (2) hyphens (--)
+    </p>
+
+    <h2>BEM example</h2>
+    <p>
+        .person {} is the Block; it is the sole root of a discrete entity. <br>
+        .person__head {} is an Element; it is a smaller part of the .person {} Block, placed on elements inside the element having the person {} class <br>
+        .person--tall {} is a Modifier; it is a specific variant of the .person {} Block. It is placed as the second class on the same element where .person element is placed
+    </p>
+
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Shopping Cart with Blocks, Elements and Modifiers(BEM) Class Naming Technique</title>
+</head>
+<body>
+
+    <main class="content-holder">
+
+        <article class="cart-container">
+
+            <section  class="cart-container__header">
+                <h3 class="cart-container__title">Your cart</h3>
+                <div class="cart-container__number-of-products">3</div>
+            </section>
+
+            <section class="cart-container__body">
+
+                <div class="cart-container__product-item cart-container__product-item--remove-border  cart-container__product-item--top-radius">
+                    <div class="cart-container__info">
+                        <h4 class="cart-container__product-name">Product name</h4>
+                        <p class="cart-container__product-description">Brief description</p>
+                    </div>
+                    <p class="cart-container__product-price">$12</p>
+                </div>
+
+                <div class="cart-container__product-item cart-container__product-item--remove-border">
+                    <div class="cart-container__info">
+                        <h4 class="cart-container__product-name">Second Product</h4>
+                        <p class="cart-container__product-description">Brief description</p>
+                    </div>
+                    <p class="cart-container__product-price">$8</p>
+                </div>
+
+                <div class="cart-container__product-item cart-container__product-item--remove-border">
+                    <div class="cart-container__info">
+                        <h4 class="cart-container__product-name">Third Product</h4>
+                        <p class="cart-container__product-description">Brief description</p>
+                    </div>
+                    <p class="cart-container__product-price">$5</p>
+                </div>
+
+                <div class="cart-container__product-item  cart-container__product-item--remove-border  cart-container__product-item--promo-code">
+                    <div class="cart-container__info">
+                        <h4 class="cart-container__product-name  cart-container__product-name--promo-code">Promo code</h4>
+                        <p class="cart-container__product-description  cart-container__product-description-promo-code">examplecode</p>
+                    </div>
+                    <p class="cart-container__product-price  cart-container__product-price--promo-code">$-5</p>
+                </div>
+
+                <div class="cart-container__product-item  cart-container__product-item--bottom-radius">
+                    <div class="cart-container__info">
+                        <h4 class="cart-container__product-name">Total (USD)</h4>
+                    </div>
+                    <p class="cart-container__product-price  cart-container__product-price-total">$20</p>
+                </div>
+
+            </section>
+
+            <section class="cart-container__footer">
+                <input type="text" class="cart-container__promo-input"  placeholder="Promo code"> 
+                <button class="cart-container__promo-btn">Redeem</button>
+            </section>
+
+        </article>
+
+
+    </main>
+    
+</body>
+</html>

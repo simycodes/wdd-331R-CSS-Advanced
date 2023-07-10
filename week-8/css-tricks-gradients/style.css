@@ -1,0 +1,130 @@
+body {
+    background-color: rgba(15, 79, 94, 0.75);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Presentational styles */
+.shape {
+  width: 250px;
+  height: 250px;
+}
+
+/* BASIC LINEAR GRADIENT */
+.my-element {
+	background-image: linear-gradient(#ff8a00, #e52e71);
+    /* background-image: linear-gradient(to bottom, #ff8a00, #e52e71); - same as above code*/
+    /* background-image: linear-gradient(180deg, #ff8a00, #e52e71) - same as above code */
+}
+
+/* LINEAR GRADIENT WITH DIRECTION SPECIFIED */
+.my-element-1 {
+	background-image:linear-gradient(to right, #ff8a00, #e52e71);
+}
+
+/* start at the bottom left corner and go to the top right corner */
+.my-element-2 {
+	background-image:linear-gradient(to top right,#ff8a00, #e52e71);
+    /* background-image:
+    linear-gradient(
+      45deg, 
+      #ff8a00, #e52e71
+    ); */
+}
+
+/* GRADIENT WITH MANY COLORS */
+.my-element-3 {
+	background-image:linear-gradient(to right,red,#f06d06, rgb(255, 255, 0), green);
+}
+
+.my-element-4 {
+	background-image:linear-gradient(to left, #ff8a00, #e52e71);
+}
+
+.my-element-5 {
+	background-image:repeating-linear-gradient(45deg, #ff8a00, #ff8a00 10px, #e52e71 10px, #e52e71 20px);
+}
+
+/* RADIAL GRADIENT SYNTAX */
+/* radial-gradient(
+  [ <ending-shape> || <size> ]? [ at <position> ]? ,
+  <color-stop-list>
+); */
+
+/* BASIC RADIAL GRADIENT */
+.radial-gradient-1 {
+	background-image: radial-gradient(#ff8a00,#e52e71);
+}
+
+/* stating the gradient shape */
+.radial-gradient-2 {
+	background-image:radial-gradient(circle, #ff8a00,#e52e71);
+}
+
+/* stating the gradient shape and fade ends by the “closest-side” */
+/* other fade ends include closest-corner, closest-side, farthest-corner, and farthest-side.  */
+.radial-gradient-3 {
+	background-image:radial-gradient(circle closest-side,#ff8a00,#e52e71);
+}
+
+.radial-gradient-4 {
+	background-image:radial-gradient(circle at top right, #ff8a00,#e52e71);
+}
+
+.radial-gradient-5 {
+	background-image:repeating-radial-gradient(#ff8a00 0 8%, #e52e71 8% 16%);
+}
+
+/* CONIC GRADIENT SYNTAX */
+/* conic-gradient(
+  [ from <angle> ]? [ at <position> ]?,
+  <angular-color-stop-list>
+) */
+
+/* BASIC RADIAL GRADIENT */
+.conic-gradient-1 {
+	background-image:conic-gradient(#ff8a00, #e52e71);
+    /* Explicitly state the location center point */
+    /* background-image: conic-gradient(at 50% 50%, #ff8a00, #e52e71); */
+    /* Explicitly state the angle of the start color */
+    /* background-image: conic-gradient(from 0deg, #ff8a00, #e52e71); */
+}
+
+.conic-gradient-2 {
+	background-image:conic-gradient(#ff8a00,#e52e71,#ff8a00);
+}
+
+.conic-gradient-3 {
+    background-image:
+    conic-gradient(
+      red,
+      yellow,
+      lime,
+      aqua,
+      blue,
+      magenta,
+      red
+    );
+}
+
+/* simple pie chart having hard stops between three color values */
+.conic-gradient-4 {
+  background-image: conic-gradient(lime 40%,yellow 0 70%,red 0);
+}
+
+.conic-gradient-5 {
+  background-image: repeating-conic-gradient(from 0deg, #ff8a00 0deg 30deg, #e52e71 30deg 60deg);
+}

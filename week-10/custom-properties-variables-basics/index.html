@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Variables and CSS Comparison Functions: min(), max(), and clamp()</title>
+</head>
+<body>
+    <h1>CSS Variables and CSS Comparison Functions: min(), max(), and clamp()</h1>
+
+    <div class="wrapper">
+
+       <div class="item-1">
+        min() function: The browser has to choose the smallest of the values (50%, 500px). Choosing that 
+        depends on the viewport width. If 50% computes to a value more than 500px, then it will be ignored 
+        and 500px will be used instead.<b>min() uses the smallest value</b>
+       </div>
+
+       <div class="item-2">
+        max() function: The browser has to choose the largest of the values (50%, 500px). 
+        Choosing that depends on the viewport width. If 50% computes to a value less than 500px, 
+        then it will be ignored and 500px will be used.<b>max() uses the largest value</b>
+       </div>
+
+       <div class="item-3">
+        clamp() function: This clamps a value between two defined values, minimum and maximum. 
+        It takes three parameters (min value, preferred value, max value). 
+        <b>The width will never go below 200px, The central (preferred) value is 50% and will only work if the
+        viewport width is greater than 400px and less than 2000px. The width won't go above 1000px</b>
+        The clamp() is similar to the physical tool we have. It clamps a value based on two provided values at the edges (min, max).
+       </div>
+
+       <div class="item-4">
+
+       </div>
+
+       <div class="item-5">
+
+       </div>
+
+    </div>
+    
+</body>
+</html>

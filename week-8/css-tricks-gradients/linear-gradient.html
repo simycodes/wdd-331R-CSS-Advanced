@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Shapes Basics</title>
+</head>
+<body>
+    <h1>CSS Common Shapes</h1>
+
+    <h2>linear-gradient() function</h2>
+    <p>
+        Perhaps the most common type of CSS gradient we see in web design is the linear-gradient(). It’s called “linear” because the colors flow from left-to-right, top-to-bottom, or at any angle you chose in a single direction.
+    </p>
+
+    <div class="wrapper">
+
+        <div class="my-element shape">
+            top to bottom(default)
+        </div>
+
+        <div class="my-element-1 shape">
+            to right
+        </div>
+
+        <div class="my-element-2 shape">
+            mix at 45deg
+        </div>
+
+        <div class="my-element-3 shape">
+            gradient with many colors
+        </div>
+
+        <div class="my-element-4 shape">
+            to left
+        </div>
+
+        <div class="my-element-5 shape">
+            repeating-linear-gradient()
+        </div>
+
+    </div>
+
+    <h2>radial-gradient() function</h2>
+    <p>
+      A radial gradient differs from a linear gradient in that it starts at a single point and emanates outward. CSS gradients are often used to simulate a light source, which we know isn’t always straight. That makes the transitions between colors in a radial gradient seem even more natural.
+    </p>
+    <p>
+        If you just specify colors, the radial-gradient() will auto-select the position as
+        center and select either a circle or ellipse, depending on the size of the box.
+    </p>
+    <p>
+       Syntax:  radial-gradient([ -ending-shape- || -size- ]? [ at -position- ]? ,-color-stop-list-);
+    </p>
+
+    <div class="wrapper">
+        <div class="radial-gradient-1 shape">
+           basic radial gradient
+        </div>
+
+        <div class="radial-gradient-2 shape">
+            radial gradient with circle shape
+        </div>
+
+        <div class="radial-gradient-3 shape">
+            radial gradient with circle shape and fade ends by the “closest-side”
+        </div>
+
+        <div class="radial-gradient-4 shape">
+            radial gradient with circle at top shape
+        </div>
+
+        <div class="radial-gradient-5 shape">
+           repeating radial gradient
+        </div>
+
+    </div>
+
+    <h2>Conic gradient</h2>
+    <p>
+        A conic gradient is similar to a radial gradient. Both are circular and use the center of the element as the source point for color stops. However, where the color stops of a radial gradient emerge from the center of the circle, a conic gradient places them around the circle.
+    </p>
+    <p>
+        The conic-gradient() function accepts position and angle arguments.
+        By default, the angle is 0 degrees which starts at the top, in the center. If you were to set the angle to be 45deg, it would be the top right corner. The angle argument accepts any type of angle value, like the linear and radial gradients.
+        The position is center by default. As with radial and linear gradients, positioning can be keyword-based, or it can be defined with numeric values.
+    </p>
+    <p>
+        They’re called “conic” because they tend to look like the shape of a cone that is being viewed from above.
+    </p>
+    <p>
+        If we do not specify an angle for the colors, then it is assumed that the gradient is evenly divided between the colors, starting at 0deg and ending at 360deg. That creates a “hard stop” where the colors bump right up to one another at 0deg and 360deg. If we introduce a third value, then that creates a smoother gradient and we start to get that cool cone-looking perspective.
+    </p>
+    <div class="wrapper">
+        <div class="conic-gradient-1 shape">
+           conic-gradient basic example
+        </div>
+
+        <div class="conic-gradient-2 shape">
+           conic-gradient with 3 colors
+        </div>
+
+        <div class="conic-gradient-3 shape">
+           conic-gradient with multiple colors
+        </div>
+
+        <div class="conic-gradient-4 shape">
+           conic-gradient with each color having specified space to take
+        </div>
+
+        <div class="conic-gradient-5 shape">
+           repeating conic-gradient
+        </div>
+
+    </div>
+    
+</body>
+</html>

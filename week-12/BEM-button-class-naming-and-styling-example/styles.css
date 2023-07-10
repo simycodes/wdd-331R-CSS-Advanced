@@ -1,0 +1,44 @@
+
+:root {
+  --max-width: 900px;
+  --min-width: 300px;
+  --preferred-width: 80%;
+  --quoteColor: #b3d4e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #EC6EAD, #52a5d2);
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* button IS THE BLOCK: The sole root of the component/Standalone entity that is meaningful 
+on its own */
+.button {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 7px 12px;
+	border: 1px solid #D5D5D5;
+	background-image: linear-gradient(#EEE, #DDD);
+	font: 700 13px/18px Helvetica, arial;
+}
+
+/* Element: A component part of the Block / A part of a block that has no standalone meaning 
+and is semantically tied to its block.
+Elements are delimited with two (2) underscores (__) */
+.button--state-success {
+	color: #FFF;
+	background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+	border-color: #4A993E;
+}
+
+/* Modifier: A variant or extension of the Block / A flag on a block or element. 
+Use them to change appearance or behavior. -->
+and Modifiers are delimited by two (2) hyphens (--)  */
+.button--state-danger {
+	color: #900;
+}
+

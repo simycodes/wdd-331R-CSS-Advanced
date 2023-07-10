@@ -1,0 +1,197 @@
+// VARIABLES
+$main-background-color: #f3f4f6;
+$promo-color: rgb(11, 183, 11);
+$grid-track-color: #ffc600;
+$first-gradient-color: #056762;
+$second-gradient-color: #5db3ae;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to left, $first-gradient-color, $second-gradient-color);
+  font-family: arial, san-serif;
+}
+
+.content-holder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1.2rem;
+}
+
+.cart-container {
+	width: 350px;
+	background-color: $main-background-color;
+	padding: 15px;
+
+  // CART HEADER SECTION 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+  }
+
+  &__title {
+    color: #6D767E;
+    font-size: 22px;
+    font-weight: bolder;
+  }
+
+  &__number-of-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #6D767E;
+    border-radius: 42%;
+    padding: 4px;
+  }
+
+  // CART BODY SECTION
+  &__body {
+    padding: 10px;
+    margin: 0;
+  }
+
+  &__product-item {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 18px;
+    padding-right: 18px;
+    background-color: white;
+    border: 1.3px solid rgb(207, 203, 203);
+    cursor: pointer;
+    transition: background-color .1s;
+  }
+
+  &__product-item:hover {
+    background-color: $main-background-color;
+  }
+
+
+  &__product-name {
+    font-size: 16px;
+    margin-bottom: -5px;
+  }
+
+  &__product-description {
+    font-size: 12px;
+    color: #6D767E;
+  }
+
+  &__product-price {
+    margin-top: 22px;
+    color: #6D767E;
+    font-weight: bold;
+  }
+
+  // cart-container__product-item MODIFIERS
+  &__product-item--remove-border {
+    border-bottom: 0;
+  }
+
+  &__product-item--top-radius {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &__product-item--bottom-radius {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  &__product-item--promo-code {
+    color: $promo-color;
+    background-color: $main-background-color;
+  }
+
+  &__product-name--promo-code {
+    color: $promo-color;
+  }
+
+  &__product-price--promo-code {
+    color: $promo-color;
+  }
+
+  &__product-description-promo-code {
+    text-transform: uppercase;
+    color: $promo-color;
+  }
+
+  &__product-price-total {
+    color: black
+  }
+
+  // END of cart-container__product-item MODIFIERS
+
+  // REDEEM PROMO/FOOTER SECTION 
+  &__footer {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    background-color: white;
+    border: 1.3px solid rgb(207, 203, 203);
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  &__promo-input {
+    flex: 2;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 7px;
+    border: 1.3px solid rgb(207, 203, 203);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 0;
+    transition: border .3s;
+  }
+
+  &__promo-btn {
+    flex: 1;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    background-color: #6D767E;
+    border: 1.3px solid #6D767E;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left: 0;
+    cursor: pointer;
+    transition: color .5s;
+  }
+
+  &__promo-input:focus {
+    outline: none;
+    border: 1px solid#6D767E;
+  }
+
+  &__promo-btn:hover {
+    background-color: $promo-color;
+    border: 1.3px solid $promo-color;
+    border-left: 0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+

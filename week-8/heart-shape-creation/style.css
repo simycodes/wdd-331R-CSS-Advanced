@@ -1,0 +1,86 @@
+body {
+    background-color: aqua;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px; */
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 2px solid red;
+}
+
+.wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* If you start with a low value (5px for example) and work your way up to 50px you 
+should see the border becoming more and more rounded...after 50px however it will
+stop changing. Because the width is of the rectangle is 50px, it is as rounded as
+it can be. */
+/* .heart {
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(45deg);
+} */
+
+ /* ::after is treated as inline. Inline elements remember ignore height and width.
+  Add display:block; to your css and you shapes will come back. */
+
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+
+.heart:before, .heart:after {
+    position: absolute; /* this makes the two shapes to attach to each other */
+    content: "";
+    top: 0; /* top and left help make the actual heart shape */
+    left: 50px;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin :0 100%;
+
+    -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+      -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+
+/* rotate one shape the opposite direction */
+/* transform-origin: changes what point the element rotates around. Default is
+ transform-origin :50% 50%; which would be the center of the object. */
+.heart:after {
+    left: 0; /* left help make the actual heart shape */
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+
+    -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+      -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+

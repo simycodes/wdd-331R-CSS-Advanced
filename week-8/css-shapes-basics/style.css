@@ -1,0 +1,151 @@
+body {
+    background-color: aqua;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px; */
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#square {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+#rectangle {
+  width: 200px;
+  height: 100px;
+  background: red;
+}
+
+#circle {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%
+}
+
+#oval {
+    width: 200px;
+    height: 100px;
+    background: red;
+    border-radius: 100px / 50px;
+}
+
+#triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+}
+
+#triangle-up-2 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid blue;
+    border-right: 50px solid blue;
+    border-bottom: 100px solid red;
+}
+
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+}
+
+/* two radii to make elliptical corners. */
+/* For elliptical corners there are 2 parameters to the border radius declaration. 
+That is: param 1: The horizontal radius. param 2: the vertical radius. */
+
+#border-radius-ellip-1 {
+    width: 150px;
+    height: 150px;
+    background: rgb(209, 111, 111);
+    border-radius: 30%;
+}
+
+#border-radius-ellip-1 {
+    width: 150px;
+    height: 150px;
+    background: rgb(209, 111, 111);
+    border-radius: 30% 30%;
+}
+
+/* The values before the / are styles for horizontal radius and those after are values 
+for the vertical radius styles: */
+#border-radius-ellip-2 {
+    width: 150px;
+    height: 150px;
+    background: rgb(209, 111, 111);
+    border-radius: 30% / 10%;
+}
+
+#border-radius-1 {
+    width: 150px;
+    height: 150px;
+    background: red;
+    /* (first radius values) / radius */
+    border-radius: 10px / 20px;
+}
+
+#border-radius-2 {
+    width: 150px;
+    height: 150px;
+    background: red;
+    /* (first radius values) / top-left-and-bottom-right | top-right-and-bottom-left */
+    border-radius: 10px 5% / 20px 30px;
+}
+
+#border-radius-3 {
+    width: 150px;
+    height: 150px;
+    background: red;
+    /* (first radius values) / top-left | top-right-and-bottom-left | bottom-right */
+    border-radius: 10px 5px 2em / 20px 25px 30%;
+}
+
+#border-radius-4 {
+    width: 150px;
+    height: 150px;
+    background: red;
+    /* (first radius values) / top-left | top-right | bottom-right | bottom-left */
+    border-radius: 10px 5% / 20px 25em 30px 35em;
+}
+
+#border-radius-5 {
+    width: 150px;
+    height: 150px;
+    background: red;
+    border-radius: 50% 20% / 10% 40%;
+}
+
+#border-radius-6 {
+    width: 200px;
+    height: 220px;
+    background: red;
+    border-radius: 50% / 100% 100% 0 0;
+}
+
+#border-radius-7 {
+    width: 200px;
+    height: 220px;
+    background: red;
+    border-radius: 100% 0 0 0 / 100% 100% 0 0;
+    /* same as code below */
+    border-radius: 100% 0 0 0;
+}

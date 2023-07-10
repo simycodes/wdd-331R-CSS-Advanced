@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdd330 Week-9 Notes</title>
+
+    <!-- STYLE SHEETS -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
+
+     <!-- Roboto+Condensed font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+
+        <header>
+            <h1 class="notes-heading">Week 9 Notes: CSS Typography</h1>
+        </header>
+
+        <main class="notes">
+    
+                <ol class="projects">
+                    <li><a href="https://web.dev/variable-fonts/" target="_blank">Introduction to variable fonts on the web</a></li>
+                    <li><a href="https://developers.google.com/fonts/docs/css2" target="_blank">Google variable fonts</a></li>
+                    <li><a href="https://24ways.org/2019/an-introduction-to-variable-fonts/" target="_blank">Intro to variable fonts</a></li>
+                    <li><a href="https://css-tricks.com/getting-the-most-out-of-variable-fonts-on-google-fonts/" target="_blank">CSS Tricks Variable fonts</a></li>
+                </ol>
+    
+                <!-- Beginning of a main topic -->
+                <section>
+                    <h2>CSS Typography</h2>
+
+                    <!-- sub topic goes here -->
+                    <article>
+                      <h3><em>Typography</em></h3>
+                        <p>
+                            Web typography is the art and technique of arranging type on a website.
+                            It involves the design or composition of the letters and characters and their
+                            arrangement, communication, visual identity, brand persona and usability etc.
+                        </p>
+                        <p> 
+                          Typography plays a fundamental role in web creation and includes branding, visual 
+                          design, user experience, user interface, content strategy.
+                        </p>
+
+                        <h4>Typography Best Practice Rules</h4>
+                        <ol>
+                            <li>Limit the number of typefaces per website.</li>
+                            <li>Use a sans serif font for body text.</li>
+                            <li>Stick to standard fonts at first.</li>
+                            <li>Size your text appropriately.</li>
+                            <li>Don’t use all caps.</li>
+                            <li>Use colors carefully and intentionally.</li>
+                            <li>Stay between around 40 and 80 characters per line.</li>
+                            <li>Provide sufficient spacing between lines.</li>
+                            <li>Eliminate text animations.</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+
+                        <h4>Generic font families</h4>
+                        <p>
+                          Generic font families: The typefaces and fonts we choose from each time we style the 
+                          text on our websites can each be categorized under one of two major styles: serif,
+                          sans-serif, or cursive.
+                        </p>
+                        <p>
+                           <b>i.Serif:</b> serif font families have decorative strokes or tails.
+                            They are commonly used for lengthy bodies of text, such as books, newspapers, many magazines, etc. 
+                            This is largely because serif typefaces are easily readable when written in small body copy sizes.
+                            <br>
+                            <b>Serif fonts are more popular for computer screens – such as websites, blogs, software</b> 
+                            ,In these use-cases, sans serif fonts are used for display use, such as headings, subtitles,
+                            button texts, etc., rather than for body texts.
+                            <b>
+                            Some of the most known Serif font families include: Times New Roman, Georgia, Palatino, Garamond,Playfair Display
+                            As you may have already noticed, brands and professional businesses often use serifs
+                            for their logo (and website) when they want to appear more reputable, established, 
+                            formal, etc.
+                            </b>
+                        </p>
+
+                        <p>
+                            <b>ii.Sans-serif</b>
+                            Sans serif typefaces are those that don’t have extending features (serifs) at the 
+                            end of their strokes. <br>
+                            Some of the most widely used sans serif typefaces include: Avenir, Roboto, 
+                            Open Sans, Source Sans Pro, Lato, Montserrat, Proxima Nova
+
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3></h3>
+                        <p>
+                            Factors to consider when selecting a font for web-content(website)
+                        </p>
+                        <ol>
+                            <li>
+                                <b>Think About How You Want To Portray Your Brand: </b>
+                                Your brand voice is verbalized and visualized by arts and letters.
+                                NOTE: Think carefully about your brand personality. What type of associations, values and adjectives do you want people to think of when seeing your website and brand assets?
+                            </li>
+                            <li>
+                                <b>Decide Between Serif or Sans Serif</b>
+                                This is the most basic and foundational selection process that you can make 
+                                about your website fonts.
+                                Serif fonts are mainly associated with “authoritative, professional brands.
+                                Sans serifs are known to be the modern choice, associated with “cutting-edge 
+                                design, commerce, and modernism’s attempt to break with the past”.
+                                NOTE: Take a look at other websites in your industry or business vertical, and 
+                                see which they most commonly use: serif or sans? This can give you an idea of 
+                                what’s most fashionable among your niche, and which typeface would make most 
+                                sense to your observers.
+                            </li>
+                            <li> 
+                                <b>See if Your Fonts Pair Well Together:</b> 
+                                Pairing two different fonts, each one with its own style and uniqueness, can 
+                                amplify the brand messaging you’re striving to convey.
+                                Brand personalities are multi-faceted. So, by using two distinct fonts (and there 
+                                are definitely plenty of web font choices), each with its own character and style,
+                                 you’re illustrating the unique, dynamic experience that your brand represents.
+                                NOTE: Test several font pairs to see which one you like best. It’s recommended to
+                                decide on a primary font first and then explore options for a secondary font, and
+                                choose your favorite pair. Expert tip: try not to exceed more than three fonts
+                                total!
+                            </li>
+
+                            <li>
+                                <b>Be Mindful of Font Size, Font Weight, and Line Length</b>
+                                NOTE:  The “ideal” line length for optimum readability in web typography is known to
+                                range between 45 to 85 characters. 
+                                If you find yourself struggling to keep your text within this range, explore 
+                                different combinations of font size and weights, to see how they impact one 
+                                another. A font size of 18px might exceed 85 characters on one line, but if you 
+                                give the font a slightly smaller size or a slightly lighter weight, things could
+                                work out in your favor.
+                            </li>
+
+                            <li>
+                                <b>Respect the Role of Visual Hierarchy</b>
+                                Get into the headset of your website visitors and readers – which words do you
+                                 want them to notice first, or even immediately? And more so, what is the most 
+                                 sophisticated, visually-pleasing format to communicate those words in?
+                            </li>
+
+                            <li>
+                                <b>Get To Know CSS Stylesheets</b>
+                                CSS stylesheets make it more likely for your design to appear exactly the way 
+                                you intended it to — and won’t be affected by constraints like device 
+                                compatibility and screen size, browser compatibility, fonts available on a 
+                                device, and similar factors
+                            </li>
+
+                            <li>
+                                <b>Stay up To Date With Typography Usage Standards</b>
+                                NOTE: Stick to conventional font sizes when deciding how big or small your text elements should be.
+                                As much as web creators thrive on creativity, the step of choosing font sizes isn’t a time to reinvent the wheel.
+                            </li>
+                        </ol>
+
+                        <h4>Readability</h4>
+                        <p>
+                            <b>i.Text Alignment</b>
+                            The way you decide to align your text (left, right, justified or centered) can
+                             have a direct impact on your content’s readability and its visual hierarchy, 
+                             which is why this is a design choice that requires a diligent thought process.
+                             The virtue of text alignment, in this case, is all about readability: it 
+                             anchors readers so that they know where each line will start and have an 
+                             easier and quicker time reading text and spending time on page and on your 
+                             site in general. <br><br>
+
+                             <b>ii.Letter Spacing</b>
+                             Letter-spacing, also known as “tracking”, is the adjustment of horizontal white 
+                             space between letters in a word or in a block of text.
+                             Designers will often increase white space between letters in order to improve the readability of the text.
+
+                             <b>Line Spacing</b>
+                             Line spacing is the term used to define the vertical space between two lines of text.
+                             When line spacing is set in a way that makes a text readable, what this essentially 
+                             means is that the reader’s eye has an easy time passing from one line of text to 
+                             the next. 
+                             <b>
+                                The general rule of thumb is that line spacing that falls within the range of
+                                 130%-150% is ideal for readability, with 140% being “the most quoted sweet 
+                                 spot”. Anything below 100% is considered to be unreadable, as this 
+                                 percentage means letters on adjacent lines can touch. Logically, the 
+                                 decision for how big or small a text’s line spacing should be is subjective 
+                                 to several factors: typeface, font size, font style, etc.
+                             </b> <br><br>
+
+                             <b>iii.Line Length</b>
+                             Line length is all about finding the “right” amount of characters on each line so that your text is as readable as can be — in other words, legibility.
+                             <b>To avoid a situation of “too long” or “too short”, the recommended line length is between 45-85 characters per line.</b>
+
+                        </p>
+
+                        <h4>Whitespace and flow</h4>
+                        <p>
+                            Whitespace is the space between design elements.
+                            The following elements make up whitespace: <br>
+                            leading: this controlled by line-height in our css <br>
+                            tight or loose type setting: would be controlled with word-spacing <br>
+                            padding: the internal space on an element is controlled with padding <br>
+                            margin: the external spacing of an element is margin <br>
+                            letter spacing (kearning): letter-spacing
+                        </p>
+                    </article>
+
+                    <article>
+                        <h4>Font-Family(typeface), and font</h4>
+                        <p>
+                           The term typeface can also be referred to as a font family: a set of characters 
+                           (letters of the alphabet) with the same design — of varying sizes and weight.
+                            Typefaces shouldn’t be confused with fonts, as a font is a graphical representation
+                            of the typeface’s text character. In essence, a typeface is a family of related
+                             fonts (hence the term “font family”), while fonts refer to the weights, widths, 
+                             and styles that are each a variation of that typeface.
+                        </p>
+
+                        <p>
+                            For example: Roboto is the name of a font family, which is a range of typefaces of
+                            the same style, and each of those variations are considered individual fonts. 
+                            Based on these nuances, we can now understand that Roboto Thin and Roboto Bold
+                            are actually not the same font — they are two separate fonts, but are part of
+                            the same (Roboto) font family.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Variable Fonts</h3>
+                        <p>
+                            Variable fonts are an evolution of the OpenType font specification that enables many 
+                            different variations of a typeface to be incorporated into a single file, rather than
+                             having a separate font file for every width, weight, or style. They let you access 
+                             all the variations contained in a given font file via CSS and a single @font-face 
+                             reference
+                        </p>
+
+                        <p>
+                            The variable font format is an evolution of OpenType (the format we’ve all been 
+                            using for years) that allows a single file to contain all of those previously 
+                            separate files (style files) in a single, highly efficient one. 
+                            The type designer can decide which axes to include, and define minimum and maximum values.
+                        </p>
+
+                        <p>
+                            Variable fonts are font files that fit a range of styles inside one file, usually
+                            in a way that allows the font user to select a style from a fluid range of styles.
+                            These stylistic ranges are called variable axes, and can be parameters, like font
+                            weight, font width, optical size, font slant, or more creative things.
+                        </p>
+
+                        <p>
+                            <b>
+                                On the web, that means we can load a single file and use CSS to set any axis, 
+                                anywhere along the allowable range, without any artificial distortion by the
+                                browser. Some fonts might only have one axis (weight being the most common),
+                                and some may have more. A few are defined as ‘registered’ axes, which are the 
+                                most common: width, weight, slant, italic, and optical size—but the format is
+                                extensible expressly so that designers can define their own custom axes and
+                                allow any sort of variation they want to create. Let’s see how that works 
+                                on the desktop.
+                            </b>
+                        </p>
+
+                        <h4>Static fonts</h4>
+                        <p>
+                            In the past, a typeface would be produced as several individual fonts, and each font 
+                            would represent one specific width/weight/style combination. So you would have separate
+                            files for 'Roboto Regular', 'Roboto Bold', and 'Roboto Bold Italic' — meaning that you
+                            could end up with 20 or 30 different font files to represent a complete typeface. <br>
+                            In such a scenario, to use a typeface for typical use on a site for body copy you 
+                            would need at least four files: regular, italic, bold, and bold italic. If you wanted
+                            to add more weights, like a lighter one for captions or a heavier one for extra
+                            emphasis, that would mean several more files. This results in more HTTP requests,
+                            and more data being downloaded (usually around 20k or more per file).
+                        </p>
+
+                        <h4>Now Variable Fonts</h4>
+                        <p>
+                            With a variable font, all of those permutations can be contained in a single file. 
+                            That file would be larger than a single font, but in most cases smaller or about the 
+                            same size as the 4 you might load for body copy. <br> 
+                            <b>
+                                The advantage in choosing the variable
+                                font is that you have access to the entire range of weights, widths, and styles 
+                                available, rather than being constrained to only the few that you previously would 
+                                have loaded separately.
+                            </b>
+                            This allows for common typographic techniques such as setting different size headings
+                            in different weights for better readability at each size or using a slightly narrower
+                            width for data-dense displays. For comparison, it is typical in a typographic system 
+                            for a magazine to use 10–15 or more different weight and width combinations throughout
+                            the publication — giving a much wider range of styles than currently typical on the
+                             web (or indeed practical for performance reasons alone).
+                        </p>
+
+                        <h4>The 'variation axis' of variable fonts</h4>
+                        <p>
+                            The heart of the new variable fonts format is the concept of an axis of variation 
+                            describing the allowable range of that particular aspect of the typeface design.
+                            <b>
+                                So the 'weight axis' describes how light or how bold the letterforms can be; 
+                                the 'width axis' describes how narrow or how wide they can be; the 'italic axis' 
+                                describes if italic letterforms are present and can be turned on or off 
+                                accordingly, etc. Note that an axis can be a range or a binary choice. Weight 
+                                might range from 1–999, whereas italic might be 0 or 1 (off or on).
+                            </b>
+                        </p>
+
+                        <p>
+                            As defined in the specification, there are two kinds of axes: registered and custom: <br>
+                            <b>
+                                i.Registered axes are those that are most frequently encountered, and common enough 
+                                that the authors of the specification felt it was worth standardizing.
+                                The five currently registered axes are weight, width, slant, italic, and optical size.
+                            </b> <br>
+                            ii.Custom axes are limitless: the typeface designer can define and scope any axis they
+                            like and are just required to give it a four-letter tag to identify it within the 
+                            font file format itself. You can use these four-letter tags in CSS to specify a 
+                            point along that axis of variation
+                        </p>
+
+                        <p>
+                            <b>NOTE: Registered axes and existing CSS attributes</b> <br>
+                            The lower-level syntax (font-variation-settings) was the first mechanism implemented
+                            to test the early implementations of variable font support. 
+                            Wherever possible, the appropriate property should be used, with the lower-level 
+                            syntax of font-variation-settings only being used to set values or axes not available
+                            otherwise. 
+                        </p>
+
+                        <h4>Using the font-variation-settings property for variable fonts</h4>
+                        <p>
+                            <b>When using font-variation-settings it is important to note that axis names are case-sensitive. 
+                            The registered axis names must be in lower case, and custom axes must be in upper case.
+                            </b>  <br>
+                            For example: <b>font-variation-settings: "wght" 375, "GRAD" 88;</b> <br>
+                            <b>wght (weight) is a registered axis, and GRAD (grade) is a custom one.</b>
+                        </p>
+
+                        <p>
+                            <b>
+                                If you have set values using font-variation-settings and want to change one of those 
+                                values, you must redeclare all of them (in the same way as when you set OpenType font 
+                                features using font-feature-settings). 
+                            </b>
+                            You can work around this limitation by using CSS Custom Properties (CSS variables) for
+                             the individual values, and modifying the value of an individual custom property. 
+                        </p>
+
+                        <h4>Variable registered axis property names and their use</h4>
+                        <p>
+                            There are currently five standard axes a font can include: <br>
+                            wght – Weight, to control lightness and boldness<br>
+                            wdth – Width, to control overall letter width<br>
+                            opsz – Optical Size, to control adjustments to design for better readability at various sizes<br>
+                            ital – Italic, generally to switch between separate upright/italic designs<br>
+                            slnt – Slant, generally to control upright-to-slanted designs with intermediate values available
+                            <b>
+                                Custom axes can be almost anything. Recursive includes three of them — Monospace (MONO), Casual (CASL), and Cursive (CRSV)  — plus two standard axes, wght and slnt.
+                            </b>
+                        </p>
+                        <ol>
+                            <li>
+                                <b>Weight:</b>
+                                Weight (represented by the wght tag) defines the design axis of how thin or thick 
+                                (light or heavy, in typical typographic terms) the strokes of the letterforms can be.
+                                Any number from 1 to 1000 is valid.
+                            </li>
+                            <li>
+                                <b>Width: </b>
+                                Width (represented by the wdth tag) defines the design axis of how narrow or wide 
+                                (condensed or extended, in typographic terms) the letterforms can be. This is 
+                                typically set in CSS using the font-stretch property, with values expressed as
+                                 a percentage above or below 'normal' (100%). <b>Note: The % symbol is not used when utilizing font-variation-settings.</b>
+                            </li>
+                            <li>
+                                <b>Italic: </b>
+                                The Italic (ital) axis works differently in that it is either on or off; there is no
+                                in-between. Italic designs often include dramatically different letterforms from 
+                                their upright counterparts, so in the transition from upright to italic, several
+                                glyph (or character) substitutions usually occur. Italic and oblique are often
+                                used somewhat interchangeably, but in truth are quite different. Oblique is 
+                                defined in this context with the term slant (see the below section), and a 
+                                typeface would typically have one or the other, but not both.
+                                In CSS, both italic and oblique are applied to text using the font-style property. 
+                                Also note the introduction of font-synthesis: none; — which will prevent browsers 
+                                from accidentally applying the variation axis and a synthesized italic. This can be 
+                                used to prevent faux-bolding as well.
+                            </li>
+                            <li>
+                                <b>Slant</b>
+                                Slant (represented by the slnt tag), or as it's often referred to, 'oblique' — is 
+                                different from true italics in that it changes the angle of the letterforms but 
+                                doesn't perform any kind of character substitution. It is also variable, in that 
+                                it is expressed as a numeric range. This allows the font to be varied anywhere 
+                                along that axis. The allowed range is generally 0 (upright) to 20 degrees.
+                                <b>The deg keyword is not used when utilizing font-variation-settings.</b>
+                            </li>
+
+                            <li>
+                                <b>Optical size</b>
+                                Optical sizing refers to the practice of varying the overall stroke thickness of 
+                                letterforms based on physical size. If the size was very small (such as an equivalent
+                                to 10 or 12px), the characters would have an overall thicker stroke, and perhaps
+                                other small modifications to ensure that it would reproduce and be readable at a 
+                                physically smaller size. Conversely, when a much larger size was being used
+                                (like 48 or 60px), there might be much greater variation in thick and thin stroke
+                                weights, showing the typeface design more in line with the original intent.
+                                <b>
+                                    There is a new attribute, font-optical-sizing, created to support variable fonts in
+                                    CSS. When using font-optical-sizing, the only allowed values are auto or none — so 
+                                    this attribute only allows for turning optical sizing on or off. However when using 
+                                    font-variation-settings: 'opsz' -num-, you can supply a numeric value
+                                </b>
+                            </li>
+                        </ol>
+
+                        <h4>Custom axes - developer created</h4>
+                        <ol>
+                            <li>
+                                <b>Grade</b>
+                                The term 'grade' refers to the relative weight or density of the typeface design, 
+                                but differs from traditional 'weight' in that the physical space the text occupies
+                                does not change, so changing the text grade doesn't change the overall layout of 
+                                the text or elements around it. 
+                                <b> This makes grade a useful axis of variation as it can be varied or animated without causing a reflow of the text itself.</b>
+                            </li>
+                        </ol>
+
+                        <h4>Typeface Vs Font</h4>
+                        <p>
+                            The main difference between these two terms is that a typeface (or type family) 
+                            is the name of a specific collection of related fonts. In comparison, font 
+                            refers to a particular weight, width, and style within that typeface. To put it 
+                            in simple terms, each variation of a typeface is a font. <br>
+                            <b>
+                                Typeface/font-family is a group of related fonts and a font is a type of
+                                a typeface/font-family with a different style, weight and width.
+                            </b>
+                        </p>
+
+                        <h4>Using a variable font: @font-face changes</h4>
+                        <p>
+                            The syntax for loading variable fonts is very similar to any other web font, 
+                            with a few notable differences.
+                            <b>
+                                The basic syntax is the same, but the font technology can be specified, and 
+                                allowable ranges for descriptors like font-weight and font-stretch can be 
+                                supplied, rather than named according to the font file being loaded.
+                            </b>
+                            Note: Supplying value ranges for font-weight, font-stretch, and font-style will keep 
+                            the browser from attempting to render an axis outside that range if you are using the
+                            appropriate attribute (i.e. font-weight or font-stretch), but will not block you from
+                            supplying an invalid value via font-variation-settings, so use with care.
+                        </p>
+
+
+                    </article>
+
+                </section>
+
+                <footer>
+                     <!-- Question section -->
+                    <div>
+                        <h4>Questions</h4>
+                        <article>
+                            <h4><em> </em></h4>
+                            <p></p>
+                        </article>   
+                    </div>
+                    <p><a href=".html"> </a></p>
+                    <p><b>NOTE:</b> Resources used include: MDN, https://elementor.com/</p>
+                </footer>
+             
+        </main>
+
+    </div> 
+</body>
+</html>

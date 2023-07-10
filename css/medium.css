@@ -65,6 +65,10 @@ main p {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+pre {
+    display: block;
+}
+
 /* .projects {
     color:#8AB7E9;
     padding:.3px;
