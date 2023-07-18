@@ -25,11 +25,11 @@ const links = [
       url: "week-7/index.html"
     },
     {
-      label: "Week-8: notes",
+      label: "Week-8: CSS Shapes(border-radius) and Gradient",
       url: "week-8/index.html"
     },
     {
-      label: "Week-9: notes",
+      label: "Week-9: CSS Typography",
       url: "week-9/index.html"
     },
      {
@@ -52,10 +52,10 @@ const links = [
       label: "Week-12: Tech Module: CSS Architecture and Component Based Design ",
       url: "week-12/index.html"
     },
-    // {
-    //   label: "Week-13 notes",
-    //   url: "week-13/index.html"
-    // },
+    {
+      label: "Week-13: Zen Garden Website (Final Project)",
+      url: "week-13/index.html"
+    },
 ]
 
 

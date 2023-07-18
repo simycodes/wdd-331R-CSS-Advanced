@@ -1,0 +1,125 @@
+@use 'variables' as *;
+@use 'atoms';
+
+// use the mixins from the atoms module to compose our molecules. If you prefer the
+// terminology 'blocks' and 'elements' feel free to use it instead!
+// The base styling we made on our atoms (elements) does most of the work...here we would
+// make any modifications on the elements if they need to appear differently in a certain
+// molecule (block)
+
+.page-wrapper {
+  display: block;
+}
+
+/* INTRO-BANNER STYLES */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #482D27;
+}
+
+header {
+  grid-column: 1;
+  grid-row: 1 / 2;
+  min-height: 80vh;
+  width: 100%;
+  background: url("./images/banner5.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+header h1 {
+  margin-left: -.5rem;
+}
+
+header h2 {
+  width: 280px;
+  color: #44210B;
+  font-size: 60px;
+  margin-top: .5rem;
+  margin-left: .5rem;
+  margin-bottom: -2rem;
+  line-height: 80px;
+}
+
+.summary {
+  grid-column: 1;
+  grid-row: 1 / 2;
+  display: flex;
+  color: #EEEEEE;
+  font-size: 17px;
+  margin-top: 12rem;
+  margin-left: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+}
+
+.summary p:nth-child(1) {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.summary p:nth-child(2) {
+  margin-right: 5rem;
+}
+
+.summary a {
+  color: #5a2504fa;
+}
+
+.preamble {
+  width: $small-view-content-width;
+  grid-column: 1;
+  grid-row: 3 / 4;
+  padding: 5px;
+  margin: 1rem;
+  background-color: #482D27;
+}
+
+aside { 
+  padding: 15px;
+  width: $small-view-content-width;
+}
+
+.main {
+  display: block;
+}
+
+.explanation {
+  padding: 5px;
+  margin: .5rem;
+  width: $small-view-content-width;
+}
+
+.participation {
+  padding: 10px;
+  margin: 10px;
+  width: $small-view-content-width;
+  background-color: #482D27;
+  border-radius: 10px;
+}
+
+.benefits {
+  padding: 5px;
+  margin: 10px;
+  width: $small-view-content-width;
+}
+
+.requirements {
+  padding: 10px;
+  margin: 10px;
+  width: $small-view-content-width;
+  background-color: #482D27;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 5px;
+  margin: .5rem;
+  width: $small-view-content-width;
+}
+

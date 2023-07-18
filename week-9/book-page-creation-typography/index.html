@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Shapes Basics</title>
+</head>
+<body>
+
+    <main class="main-container">
+        <div class="page-number">
+            <p>126</p>
+        </div>
+
+        <div class="page-container">
+            <div class="chapter-number">
+                Chapter 6
+            </div>
+        
+            <p class="first-paragraph">
+                For example, say your developers have come up with the perfect amortization program
+                and you want to install it on the workgroup server for other systems to remotely 
+                mount and use. Because this is a third-party or custom application, the logical 
+                place for it is in <span class="commands-and-paths">/usr/local/appname</span>, possibly with a link to the program binary
+                in the <span class="commands-and-paths">/usr/local/bin</span> directory (because that's in the path).
+            </p>
+
+            <div class="alert-section-1">
+                <div class="alert">Exam Alert</div>
+                <div class="alert-border"></div>
+                <p class="alert-paragraph">
+                    If given a choice between putting the software package <span>bigprog</span> in the
+                    <strong>/usr/local/<span>bigprog</span> </strong> section and the <strong>/opt/<span>bigprog</span> </strong> section, it's hard to choose. 
+                    Read any relevant exam question closely--the main difference being that the <strong>/opt</strong> 
+                    section is not considered to be sharable, whereas the <strong>/usr</strong> section is often shared
+                    and mounted by client systems.
+                </p>  
+            </div>
+
+            <h1>File Management Commands</h1>
+
+            <div class="second-paragraph">
+                A major section of the 101 exam is dedicated to how to run commands properly with 
+                the right options and arguments. As a good sysadmin, you'll be expected to know 
+                how to create, delete, edit, set permissions on, display, move, copy, and 
+                determine the type of files and programs.
+            </div>
+
+            <div class="alert-section-2">
+                <div class="alert">Exam Alert</div>
+                <div class="alert-border"></div>
+                <p class="alert-paragraph">
+                    You must be able to pick proper and working commands out of lists of possibilities, 
+                    type in appropriate strings in fill-in-the-blank boxes, and in general show that 
+                    you've run the programs and utilities in question.
+                </p>  
+            </div>
+
+            <h2>Tips for working with Linux files</h2>
+            <p class="third-paragraph">
+                Because most users and sysadmins come from a Windows or other OS background, a quick
+                set of recommendations for the less-experienced can be of help here:
+            </p>
+
+            <div class="tips-container">
+                <ul>
+                    <li>
+                        <b>&#10148; Hidden files aren't really hidden -</b> They just begin with a ., such as the
+                        <span class="commands-and-paths">.bashrc</span> and <span class="commands-and-paths">.bash_profile</span> files. These are not viewable by normal users with conventional 
+                        commands and switches and aren't deleted by commands such as  
+                        <span class="commands-and-paths">rm -f *.*.</span>
+                    </li>
+
+                    <li>
+                        <b>&#10148; Filenames can contain multiple periods or no period characters -</b> The filenames 
+                        <span class="commands-and-paths">this.is.a.long.file</span> and 
+                        <span class="commands-and-paths">thisisalongfile</span> are perfectly reasonable and possible.
+                    </li>
+
+                    <li>
+                        <b>&#10148; Spaces in filenames look nice, but are a pain to type -</b> Use an _ or a - instead of 
+                        spaces because it's neater and easier than prefixing all spaces with a <span class="commands-and-paths">\</span>. 
+                        (To display a space in a filename, the system shows a space prefixes with a 
+                        backslash.)
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    
+</body>
+</html>

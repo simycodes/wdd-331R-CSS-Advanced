@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+:root {
+  --MONO: 0; /* Monospace    */
+  --CASL: 0; /* Casual       */
+  --slnt: 0; /* Upright      */
+  --CRSV: 0.5; /* Auto Cursive */
+}
+
+* {
+  font-variation-settings: "MONO" var(--MONO), "CASL" var(--CASL), "slnt" var(--slnt), "CRSV" var(--CRSV);
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+h1, h2 {
+  font-family: "Recursive", monospace;
+  font-weight: 700;
+  --CASL: 0;
+  --slnt: 0;
+  --MONO: 0.11;
+  --CRSV: 1;
+}
+
+.main-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  max-width: 1000px;
+}
+
+.page-number {
+  grid-column: 1/2;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: "Recursive", monospace;
+  --CASL: 0;
+  --MONO: 0.11;
+  --CRSV: 1;
+}
+
+.page-container {
+  grid-column: 2/-1;
+  max-width: 800px;
+}
+
+.chapter-number {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 20px;
+  background-image: linear-gradient(to right, black 25%, rgba(41, 35, 35, 0) 0%);
+  background-position: bottom;
+  background-size: 10px 2px;
+  background-repeat: repeat-x;
+  font-family: "Recursive", monospace;
+  font-weight: 400;
+  --MONO: 1;
+  --CRSV: 0.5;
+}
+
+.first-paragraph {
+  margin-top: 2rem;
+  line-height: 155%;
+}
+
+/* ALERT SECTION STYLES */
+.alert-section-1, .alert-section-2 {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.alert {
+  text-align: center;
+  font-size: 23px;
+  width: 90px;
+  height: 90px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid rgb(90, 79, 79);
+  border-radius: 50%;
+}
+.alert span {
+  font-size: 16px;
+}
+
+.alert-border {
+  height: 120px;
+  margin-left: 10px;
+  border-left: 3px solid rgb(82, 77, 77);
+}
+
+.alert-paragraph {
+  flex: 1;
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 0;
+  font-family: "Recursive", monospace;
+  font-weight: 430;
+  font-size: 16px;
+  --MONO: 1;
+  --CRSV: 0.5;
+}
+.alert-paragraph span {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.alert-paragraph span, .alert-paragraph strong {
+  font-family: "Recursive", monospace;
+  --CASL: 0;
+  --slnt: 0;
+  --MONO: 0.11;
+  --CRSV: 1;
+}
+
+/* END OF ALERT SECTION STYLES */
+.second-paragraph, .third-paragraph {
+  margin-top: -1rem;
+  line-height: 155%;
+}
+
+.tips-container {
+  margin-left: -2rem;
+}
+.tips-container ul {
+  list-style-type: none;
+}
+.tips-container ul li {
+  line-height: 155%;
+  margin: 15px;
+}
+
+.commands-and-paths {
+  font-size: 16px;
+  font-weight: 500;
+  --MONO: 1;
+  --CRSV: 0.5;
+}
+
+/*# sourceMappingURL=style.css.map */
